@@ -64,7 +64,7 @@
       :fixed="fixed"
       app
     >
-      <span>&copy; 2020</span>
+      <span>2020 Proudly powered by @node_mental</span>
     </v-footer>
   </v-app>
 </template>
@@ -79,19 +79,34 @@ export default {
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
+          title: 'Top',
           to: '/'
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          title: 'Profile',
+          to: '/profile'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Categories',
+          to: '/categories'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Articles',
+          to: '/posts'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Contact',
+          to: '/contact'
         }
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: '◯◯ブログ'
+      title: '私の色づくり ー自分探しの日記ー'
     }
   }
 }

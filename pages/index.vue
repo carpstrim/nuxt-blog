@@ -1,3 +1,4 @@
+<!-- top page & recent articles -->
 <template>
   <section class="latest-posts">
     <div class="posts">
