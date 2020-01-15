@@ -1,4 +1,4 @@
 <!-- display all articles -->
 <template>
-    <div>記事カテゴリー一覧</div>
+    <div>記事一覧</div>
 </template>

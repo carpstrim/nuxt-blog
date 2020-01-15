@@ -83,22 +83,22 @@ export default {
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-file-outline',
           title: 'Profile',
           to: '/profile'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Categories',
-          to: '/categories'
+          icon: 'mdi-controller-classic',
+          title: 'Category',
+          to: '/category'
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-microphone-settings',
           title: 'Articles',
           to: '/posts'
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-calendar-today',
           title: 'Contact',
           to: '/contact'
         }
