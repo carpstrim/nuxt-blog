@@ -89,6 +89,7 @@ export default {
   },
   markdownit: {
     injected: true,
+    breaks: true,
     html: true,
     linkify: true,
     typography: true,

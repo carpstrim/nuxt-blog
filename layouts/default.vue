@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -40,7 +40,19 @@
     </v-app-bar>
     <v-content>
       <v-container>
-        <nuxt />
+        <v-layout row wrap>
+        <v-flex xs12 sm8>
+          <nuxt style="margin: 0 10px" />
+        </v-flex>
+        <v-flex xs12 sm4>
+            <article>
+              <v-card style="margin: 0 20px" color="primary">profile</v-card>
+            </article>
+            <article>
+              <v-card class="mt-5" style="margin: 0 20px" color="primary">category</v-card>
+            </article>
+        </v-flex>
+        </v-layout>
       </v-container>
     </v-content>
     <v-navigation-drawer
@@ -64,7 +76,7 @@
       :fixed="fixed"
       app
     >
-      <span>2020 Proudly powered by @node_mental</span>
+      <span>2020 Proudly powered by <a href="https://twitter.com/node_mental">@node_mental</a></span>
     </v-footer>
   </v-app>
 </template>
@@ -106,7 +118,8 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: '私の色づくり ー自分探しの日記ー'
+      title: 'ブログサンプル',
+      subTitle: "つれづれなる日記"
     }
   }
 }

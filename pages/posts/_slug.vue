@@ -1,11 +1,13 @@
 <template>
-  <article class="article">
-    <div class="single">
-      <h1 class="post-title">{{ post.fields.title }}</h1>
-      <p class="post-created-at">{{ formatDate(post.sys.createdAt) }}</p>
-      <div class="post-content" v-html="$md.render(post.fields.content)"></div>
-    </div>
+  <div style="background-color: grey">
+  <article>
+    <v-container style="white-space: pre-line; word-break: break-all">
+      <h1>{{ post.fields.title }}</h1>
+      <p>{{ formatDate(post.sys.createdAt) }}</p>
+      <div v-html="$md.render(post.fields.content)"></div>
+    </v-container>
   </article>
+  </div>
 </template>
 
 <script>
@@ -38,46 +40,12 @@ export default {
       const yyyy = new String(date.getFullYear())
       const mm = new String(date.getMonth() + 1).padStart(2, "0")
       const dd = new String(date.getDate()).padStart(2, "0")
-      return `${yyyy}.${mm}.${dd}`
+      return `${yyyy}/${mm}/${dd}`
     }
   }
 }
 </script>
 
-<style lang="scss">
-article.article {
-  padding: 10px;
-  .single {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 10px;
-    color: #222;
-    border: 2px solid #444;
-    border-radius: 10px;
-    h1, h2, h3 {
-      margin: 16px 0;
-    }
-    h1.post-title {
-      font-size: 32px;
-      text-decoration: underline;
-    }
-    .post-content {
-      h1 {
-        font-size: 32px;
-      }
-      h2 {
-        font-size: 24px;
-        background: #ccc
-      }
-      p {
-        margin: 16px 0;
-        font-size: 16px;
-      }
-      img {
-        max-width: 100%;
-        border: 1px solid #000;
-      }
-    }
-  }
-}
+<style>
+
 </style>
