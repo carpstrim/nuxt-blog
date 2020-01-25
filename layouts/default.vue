@@ -9,6 +9,12 @@
     >
       <v-list>
         <v-list-item
+        @click="drawer= !drawer">
+          <v-list-item-action>
+            <v-icon>mdi-arrow-left</v-icon>
+          </v-list-item-action>
+        </v-list-item>
+        <v-list-item
           v-for="(item, i) in items"
           :key="i"
           :to="item.to"
@@ -24,22 +30,21 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar
-      :clipped-left="clipped"
-      fixed
-      app
-    >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
 
-
-
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
-
-
-    </v-app-bar>
-    <v-content>
-      <v-container>
+<template>
+  <v-flex xs12>
+  <v-card 
+  class="mx-auto" 
+  color="primary" 
+  height="200px" 
+  max-width="1200px"
+  >
+    <v-btn @click="drawer= !drawer"></v-btn>
+    aaaaa
+  </v-card>
+  </v-flex>
+      <v-content>
+      <v-container style="max-width: 1200px">
         <v-layout row wrap>
         <v-flex xs12 sm8>
           <nuxt style="margin: 0 10px" />
@@ -54,7 +59,9 @@
         </v-flex>
         </v-layout>
       </v-container>
-    </v-content>
+      </v-content>
+</template>
+
     <v-navigation-drawer
       v-model="rightDrawer"
       :right="right"
@@ -73,8 +80,9 @@
       </v-list>
     </v-navigation-drawer>
     <v-footer
-      :fixed="fixed"
-      app
+    fixed
+    app
+    absolute
     >
       <span>2020 Proudly powered by <a href="https://twitter.com/node_mental">@node_mental</a></span>
     </v-footer>
@@ -87,7 +95,6 @@ export default {
     return {
       clipped: false,
       drawer: false,
-      fixed: false,
       items: [
         {
           icon: 'mdi-apps',
@@ -118,8 +125,8 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'ブログサンプル',
-      subTitle: "つれづれなる日記"
+      title: 'COLOR PALETTE',
+      subTitle: "ー私の色づくりー"
     }
   }
 }
