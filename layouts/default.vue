@@ -43,13 +43,13 @@
       height="160px"
       :src="topImg"
     >
-      <v-btn class="ma-2 mb-8"
+      <v-btn class="ma-2 mb-7"
       text
       icon
       color="white"
       @click="drawer= !drawer"><v-icon>mdi-menu</v-icon></v-btn>
-      <v-card-title>COLOR PALETTE</v-card-title>
-      <v-card-subtitle style="color: white">ー 私の色づくり ー</v-card-subtitle>
+      <v-card-title style="font-size: 20pt" class="mb-1">COLOR PALETTE</v-card-title>
+      <v-card-subtitle style="color: white; font-size: 14pt; margin-left: 10px">ー 私の色づくり ー</v-card-subtitle>
     </v-img>
 
 
@@ -217,3 +217,7 @@ export default {
   }
 }
 </script>
+
+<style>
+
+</style>
