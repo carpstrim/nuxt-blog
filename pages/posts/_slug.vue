@@ -7,6 +7,8 @@
       <p class="date"><span>{{ formatDate(post.sys.createdAt) }}</span>
       <span class="tag">{{post.fields.category.fields.title}}</span></p>
       <h1>{{ post.fields.title }}</h1>
+      <p class="author">Written by {{post.fields.author.fields.name}}</p>
+      <v-img　class="ma-5" :src="post.fields.image.fields.file.url" />
       <div class="content" v-html="$md.render(post.fields.content)"></div>
     </v-container>
   </article>
@@ -92,6 +94,13 @@ p {
   background: #FFA726;/*背景色*/
   padding: 0.3em 1em 0.3em 1em;/*文字まわり（上下左右）の余白*/
   margin-left: 30px;
+}
+
+.author {
+  text-align: right;
+  margin-top: 4px;
+  color: #5472cd;
+  font-size: 13pt;
 }
 
 .content {
