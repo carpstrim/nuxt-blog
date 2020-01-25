@@ -93,12 +93,12 @@
           <nuxt class="mt-5" />
         </v-flex>
         <v-flex xs12 sm4>
-            <article>
+            <!--<article>
               <v-card class="mt-5" style="margin: 0 10px 0 10px" color="primary">profile</v-card>
             </article>
             <article>
               <v-card class="mt-5" style="margin: 0 10px 0 10px" color="primary">category</v-card>
-            </article>
+            </article>-->
         </v-flex>
         </v-layout>
       </v-container>
