@@ -1,5 +1,5 @@
 <template>
-    <v-card style="margin: 0 25px 0 25px">
+    <v-card>
                   <v-list>
                       <v-list-item link>
                           <v-list-item-content>

@@ -25,7 +25,7 @@
 
         <v-flex xs12 sm4>
             <article>
-              <profile-card />
+              <profile-card style="margin: 0 25px 0 25px" />
             </article>
             <article>
               <category-list
