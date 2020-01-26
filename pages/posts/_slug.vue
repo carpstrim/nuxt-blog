@@ -25,7 +25,7 @@
 
         <v-flex xs12 sm4>
             <article>
-              <profile-card style="margin: 0 25px 0 25px" />
+              <profile style="margin: 0 25px 0 25px" />
             </article>
             <article>
               <category-list
@@ -42,13 +42,13 @@
 <script>
 import client from '~/plugins/contentful'
 import CategoryList from "@/components/CategoryList"
-import ProfileCard from "@/components/ProfileCard"
+import Profile from "@/components/Profile"
 
 
 export default {
   components: {
     CategoryList,
-    ProfileCard
+    Profile
   },
   async asyncData({ params, error, payload }) {
 //    if (payload) return { post: payload }
