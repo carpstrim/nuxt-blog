@@ -7,7 +7,7 @@
                           </v-list-item-content>
                       </v-list-item>
                   </v-list>
-                <v-card-text><p style="margin: 0 20px 0 20px">一見共通点のない2人が、一緒にブログを運営します。</p><p style="margin: 0 20px 0 20px">思ったことを、思ったままに表現できる場にしたい。</p></v-card-text>
+                <v-card-text><p style="margin: 0 20px 0 20px">一見共通点のない2人が、一緒にブログを運営します。</p><p style="margin: 0 20px 0 20px">思ったことを、思ったままに表現できる場に。</p></v-card-text>
                 <v-divider />
                   <v-row no-gutters>
                     <v-col cols="4">
