@@ -43,12 +43,12 @@
       height="160px"
       :src="topImg"
     >
-      <v-btn class="ma-2 mb-7"
+      <v-btn class="ma-2 mb-6"
       text
       icon
       color="white"
       @click="drawer= !drawer"><v-icon>mdi-menu</v-icon></v-btn>
-      <v-card-title style="font-size: 20pt" class="mb-1">COLOR PALETTE</v-card-title>
+      <v-card-title style="font-size: 20pt" class="mb-2">COLOR PALETTE</v-card-title>
       <v-card-subtitle style="color: white; font-size: 14pt; margin-left: 10px">ー 私の色づくり ー</v-card-subtitle>
     </v-img>
 
@@ -60,7 +60,7 @@
     <v-card-actions>
       <v-layout row wrap justify-space-around>
       <v-btn
-        color="orange"
+        color="primary"
         text
         to="/"
       >
@@ -68,7 +68,7 @@
       </v-btn>
 
       <v-btn
-        color="orange"
+        color="primary"
         text
         to="/profile"
       >
@@ -76,7 +76,7 @@
       </v-btn>
 
       <v-btn
-        color="orange"
+        color="primary"
         text
         to="contact"
       >
@@ -87,41 +87,12 @@
   </v-card>
   </v-flex>
       <v-content>
-      <v-container style="max-width: 1200px">
-        <v-layout row wrap>
-        <v-flex xs12 sm8>
+
           <nuxt class="mt-5" />
-        </v-flex>
-        <v-flex xs12 sm4>
-            <!--<article>
-              <v-card class="mt-5" style="margin: 0 10px 0 10px" color="primary">profile</v-card>
-            </article>
-            <article>
-              <v-card class="mt-5" style="margin: 0 10px 0 10px" color="primary">category</v-card>
-            </article>-->
-        </v-flex>
-        </v-layout>
-      </v-container>
+        
       </v-content>
 </template>
 
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
 
     <v-footer
     color="cyan lighten-2"
@@ -177,6 +148,7 @@
 
 <script>
 import topImg from "@/static/top.jpg"
+
 export default {
   data () {
     return {

@@ -1,35 +1,71 @@
 <template>
-  <v-card color="white"
-  flat
-  tile>
-  <article class="post">
-    <v-container style="white-space: pre-line; word-break: break-all;">
-      <p class="date"><span>{{ formatDate(post.sys.createdAt) }}</span>
-      <span class="tag">{{post.fields.category.fields.title}}</span></p>
-      <h1>{{ post.fields.title }}</h1>
-      <p class="author">Written by {{post.fields.author.fields.name}}</p>
-      <v-img　class="ma-5" :src="post.fields.image.fields.file.url" />
-      <div class="content" v-html="$md.render(post.fields.content)"></div>
-    </v-container>
-  </article>
-  </v-card>
+  <v-container style="max-width: 1200px">
+    <v-layout row wrap>
+    <v-flex xs12 sm8>
+      <v-card color="white"
+      flat
+      tile
+      >
+      <article class="post">
+        <v-container style="white-space: pre-line; word-break: break-all;">
+          <p class="date"><span>{{ formatDate(post.sys.createdAt) }}</span>
+          <span class="tag">{{post.fields.category.fields.title}}</span></p>
+          <h1>{{ post.fields.title }}</h1>
+          <p class="author">Written by {{post.fields.author.fields.name}}</p>
+          <v-img　
+          class="ma-5" 
+          :src="post.fields.image.fields.file.url"
+          aspect-ratio="1" />
+          <div class="content" v-html="$md.render(post.fields.content)"></div>
+        </v-container>
+      </article>
+      </v-card>
+    </v-flex>
+
+        <v-flex xs12 sm4>
+            <article>
+              <v-card class="mt-5" style="margin: 0 25px 0 25px" color="primary">profile</v-card>
+            </article>
+            <article>
+              <category-list
+              :categories="categories"
+              class="mt-10"
+              style="margin: 0 25px 0 25px"
+              />
+            </article>
+        </v-flex>
+        </v-layout>
+      </v-container>
 </template>
 
 <script>
 import client from '~/plugins/contentful'
+import CategoryList from "@/components/CategoryList"
 
 export default {
-  asyncData({ params, error, payload }) {
-    if (payload) return { post: payload }
-    return client
+  components: {
+    CategoryList
+  },
+  async asyncData({ params, error, payload }) {
+//    if (payload) return { post: payload }
+    const post = await client
       .getEntries({
         content_type: 'post',
         'fields.slug': params.slug,
       })
       .then(entries => {
-        return { post: entries.items[0] }
+        return entries.items[0]
       })
-      .catch(e => console.log(e))
+    const categories = await client
+      .getEntries({
+        content_type: 'category',
+        order: '-sys.createdAt',
+      })
+      .then(entries => {
+        return entries.items.map(e => { return e.fields})
+      })
+      
+      return {post, categories}
   },
   head() {
     return {
@@ -37,7 +73,12 @@ export default {
     }
   },
   mounted() {
-    console.log(this.post)
+    console.log({post: this.post, categories: this.categories})
+  },
+  data(){
+    return {
+
+    }
   },
   methods: {
     formatDate(iso) {
