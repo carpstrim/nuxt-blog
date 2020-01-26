@@ -5,6 +5,7 @@
       <v-card color="white"
       flat
       tile
+      class="mb-5"
       >
       <article class="post">
         <v-container style="white-space: pre-line; word-break: break-all;">
@@ -13,9 +14,9 @@
           <h1>{{ post.fields.title }}</h1>
           <p class="author">Written by {{post.fields.author.fields.name}}</p>
           <v-img　
-          class="ma-5" 
+          class="ma-8" 
           :src="post.fields.image.fields.file.url"
-          aspect-ratio="1" />
+          aspect-ratio="1.77" />
           <div class="content" v-html="$md.render(post.fields.content)"></div>
         </v-container>
       </article>
@@ -24,7 +25,7 @@
 
         <v-flex xs12 sm4>
             <article>
-              <v-card class="mt-5" style="margin: 0 25px 0 25px" color="primary">profile</v-card>
+              <profile-card />
             </article>
             <article>
               <category-list
@@ -41,10 +42,13 @@
 <script>
 import client from '~/plugins/contentful'
 import CategoryList from "@/components/CategoryList"
+import ProfileCard from "@/components/ProfileCard"
+
 
 export default {
   components: {
-    CategoryList
+    CategoryList,
+    ProfileCard
   },
   async asyncData({ params, error, payload }) {
 //    if (payload) return { post: payload }
@@ -128,7 +132,6 @@ export default {
   margin: 10px 1rem 0 1rem;
 }
 
-
 .post .tag {
   background: #FFA726;/*背景色*/
   padding: 0.3em 1em 0.3em 1em;/*文字まわり（上下左右）の余白*/
@@ -145,6 +148,7 @@ export default {
 .post .content {
   margin-top: 40px;
 }
+
 
 
 </style>

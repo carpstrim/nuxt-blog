@@ -3,7 +3,7 @@
   <v-container>
   <section class="latest-posts">
     <div class="posts">
-      <nuxt-link :to="'posts/'+post.fields.slug" class="post" v-for="(post, index) in posts" :key="index">
+      <nuxt-link :to="'posts/'+post.fields.slug" v-for="(post, index) in posts" :key="index">
         <div class="thumb">
           <!--<img :src="post.fields.image.fields.file.url">-->
         </div>
@@ -46,10 +46,8 @@ export default {
 }
 </script>
 
-<style scoped>
-
-h2 {
-  
+<style>
+.post-text h2 {
+  color: red;
 }
-
 </style>

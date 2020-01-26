@@ -22,7 +22,7 @@
           exact
         >
           <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon color="primary">{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title v-text="item.title" />
@@ -162,22 +162,22 @@ export default {
           to: '/'
         },
         {
-          icon: 'mdi-file-outline',
+          icon: 'mdi-account',
           title: 'プロフィール',
           to: '/profile'
         },
         {
-          icon: 'mdi-controller-classic',
+          icon: 'mdi-tag-multiple',
           title: 'カテゴリー',
           to: '/category'
         },
         {
-          icon: 'mdi-microphone-settings',
+          icon: 'mdi-newspaper-variant',
           title: '記事一覧',
           to: '/posts'
         },
         {
-          icon: 'mdi-calendar-today',
+          icon: 'mdi-email-send',
           title: 'お問い合わせ',
           to: '/contact'
         }
