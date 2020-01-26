@@ -97,8 +97,8 @@ export default {
 }
 </script>
 
- <style>
- .node-profile p {
+<style>
+.node-profile p {
   border-bottom: solid 2px #cce4ff;
   position: relative;
   margin: 2px 0 0 0
@@ -135,4 +135,4 @@ export default {
 .oni-profile span {
   font-size: 9pt;
 }
- </style>
+</style>
