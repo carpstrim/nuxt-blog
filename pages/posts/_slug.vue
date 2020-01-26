@@ -2,7 +2,7 @@
   <v-card color="white"
   flat
   tile>
-  <article>
+  <article class="post">
     <v-container style="white-space: pre-line; word-break: break-all;">
       <p class="date"><span>{{ formatDate(post.sys.createdAt) }}</span>
       <span class="tag">{{post.fields.category.fields.title}}</span></p>
@@ -52,13 +52,14 @@ export default {
 </script>
 
 <style>
-h1 {
+
+.post h1 {
   border-bottom: solid 3px #cce4ff;
   position: relative;
-  margin: 30px 10px 0 10px
+  margin: 20px 10px 0 10px
 }
 
-h1:after {
+.post h1:after {
   position: absolute;
   content: " ";
   display: block;
@@ -67,44 +68,41 @@ h1:after {
   width: 20%;
 }
 
-h2 {
+.post h2 {
   padding: 0.5em;/*文字周りの余白*/
   color: #494949;/*文字色*/
   background: #cce4ff;/*背景色*/
   border-left: solid 5px #5472cd;/*左線（実線 太さ 色）*/
-  margin: 0 0 10px 0
+  margin: 20px 0 20px 0
 }
 
-h3 {
+.post h3 {
   color: #6594e0;/*文字色*/
   /*線の種類（点線）2px 線色*/
   border-bottom: dashed 2px #6594e0;
+  margin: 15px 1rem 10px 1rem;
+}
+
+.post p {
   margin: 10px 1rem 0 1rem;
 }
 
-p {
-  margin: 0 1rem 0 1rem;
-}
 
-.date {
-  margin: 10px 10px 0 10px;
-}
-
-.tag {
+.post .tag {
   background: #FFA726;/*背景色*/
   padding: 0.3em 1em 0.3em 1em;/*文字まわり（上下左右）の余白*/
   margin-left: 30px;
 }
 
-.author {
+.post .author {
   text-align: right;
-  margin-top: 4px;
+  margin-top: 7px;
   color: #5472cd;
   font-size: 13pt;
 }
 
-.content {
-  margin-top: 30px;
+.post .content {
+  margin-top: 40px;
 }
 
 
