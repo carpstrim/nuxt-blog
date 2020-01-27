@@ -9,7 +9,7 @@
           <v-img　
           class="ma-3"
           :src="post.fields.image.fields.file.url"
-          aspect-ratio="1.2"
+          aspect-ratio="1.3"
           />
           </v-flex>
           <v-flex xs12 sm8>
@@ -28,21 +28,21 @@
           <v-card
           flat
           tile
-          class="mr-1 ml-1" style="mx-auto">
+          class="mr-1 ml-1">
             <v-card-text>{{post.fields.outline}}</v-card-text>
+            
           </v-card>
+          </v-flex>
+          </v-layout>
+          
+          <v-layout justify-end align-end>
           <v-btn
           tile
           outlined
-          large
           color="primary"
           :to="'/posts/' + post.fields.slug"
-          style="position: absolute; right: 25px; bottom: 20px">READ MORE</v-btn>
-          </v-flex>
-          
+          >続きを読む</v-btn>
           </v-layout>
-          
-          
         </v-container>
           </v-card>
 </template>

@@ -57,7 +57,7 @@ async asyncData({ params }) {
     console.log({categories: this.categories})
   },
   head: {
-    title: '記事一覧',
+    title: 'トップ',
   },
   components: {
     CategoryList,
