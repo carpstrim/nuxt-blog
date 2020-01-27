@@ -1,53 +1,80 @@
 <!-- top page & recent articles -->
 <template>
-  <v-container>
-  <section class="latest-posts">
-    <div class="posts">
-      <nuxt-link :to="'posts/'+post.fields.slug" v-for="(post, index) in posts" :key="index">
-        <div class="thumb">
-          <!--<img :src="post.fields.image.fields.file.url">-->
+  <v-container style="max-width: 1200px">
+    <v-layout row wrap>
+      <v-flex xs12 sm8>
+        <div v-for="(post, index) in posts" :key="index">
+          <post-outline-card
+          :post="post"
+          />
         </div>
-        <div class="post-text">
-          <p>{{ formatDate(post.sys.createdAt) }}</p>
-          <h2>{{ post.fields.title }}</h2>
-        </div>
-      </nuxt-link>
-    </div>
-  </section>
+      </v-flex>
+        <v-flex xs12 sm4>
+            <article>
+              <profile style="margin: 0 25px" />
+            </article>
+            <article>
+              <category-list
+              :categories="categories"
+              class="mt-10 mb-10"
+              style="margin: 0 25px"
+              />
+            </article>
+        </v-flex>
+    </v-layout>
   </v-container>
 </template>
 
 <script>
 import client from '~/plugins/contentful'
+import CategoryList from "@/components/CategoryList"
+import Profile from "@/components/Profile"
+import PostOutlineCard from "@/components/PostOutlineCard"
+
 export default {
-  asyncData({ params }) {
-    return client
+async asyncData({ params }) {
+    const posts = await client
       .getEntries({
         content_type: 'post',
         order: '-sys.createdAt',
       })
       .then(entries => {
-        return { posts: entries.items }
+        return entries.items
       })
-      .catch(e => console.log(e))
+    const categories = await client
+      .getEntries({
+        content_type: 'category',
+        order: '-sys.createdAt',
+      })
+      .then(entries => {
+        return entries.items.map(e => { return e.fields})
+      })
+      
+      return {posts, categories}
+  },
+  mounted(){
+    console.log({post:this.posts[0]})
+    console.log({categories: this.categories})
   },
   head: {
     title: '記事一覧',
   },
-  methods: {
-    formatDate(iso) {
-      const date = new Date(iso)
-      const yyyy = new String(date.getFullYear())
-      const mm = new String(date.getMonth() + 1).padStart(2, "0")
-      const dd = new String(date.getDate()).padStart(2, "0")
-      return `${yyyy}.${mm}.${dd}`
+  components: {
+    CategoryList,
+    Profile,
+    PostOutlineCard
+  },
+  data(){
+    return {
+
     }
+  },
+  methods: {
+
   }
 }
 </script>
 
 <style>
-.post-text h2 {
-  color: red;
-}
+
 </style>

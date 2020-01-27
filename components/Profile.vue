@@ -100,38 +100,22 @@ export default {
 
 <style>
 .node-profile p {
-  border-bottom: solid 2px #cce4ff;
+  color: #5472cd;
   position: relative;
-  margin: 4px 0 0 0
+  margin: 5px 0 0 0
 }
 
-.node-profile p:after{
-  position: absolute;
-  content: " ";
-  display: block;
-  border-bottom: solid 2px #5472cd;
-  bottom: -2px;
-  width: 20%;
-}
 
 .node-profile span {
   font-size: 9pt;
 }
 
 .oni-profile p {
-  border-bottom: solid 2px #FFCC80;
+  color: #EF6C00;
   position: relative;
-  margin: 4px 0 0 0
+  margin: 5px 0 0 0
 }
 
-.oni-profile p:after{
-  position: absolute;
-  content: " ";
-  display: block;
-  border-bottom: solid 2px #EF6C00;
-  bottom: -2px;
-  width: 20%;
-}
 
 .oni-profile span {
   font-size: 9pt;

@@ -9,9 +9,14 @@
       <article class="post">
         <v-container style="white-space: pre-line; word-break: break-all;">
           <p class="date"><span>{{ formatDate(post.sys.createdAt) }}</span>
-          <span class="tag">{{post.fields.category.fields.title}}</span></p>
+          <v-btn
+          depressed
+          color="#FFA726"
+          height="30px"
+          :to="'/category/' + post.fields.category.fields.slug"
+          style="margin-left: 30px">{{post.fields.category.fields.title}}</v-btn></p>
           <h1>{{ post.fields.title }}</h1>
-          <p class="author">Written by： {{post.fields.author.fields.name}}</p>
+          <p class="author">Writer： {{post.fields.author.fields.name}}</p>
           <v-img　
           class="ma-2" 
           :src="post.fields.image.fields.file.url"
@@ -131,11 +136,6 @@ export default {
   margin: 10px 1rem 0 1rem;
 }
 
-.post .tag {
-  background: #FFA726;/*背景色*/
-  padding: 0.3em 1em 0.3em 1em;/*文字まわり（上下左右）の余白*/
-  margin-left: 30px;
-}
 
 .post .author {
   text-align: right;
