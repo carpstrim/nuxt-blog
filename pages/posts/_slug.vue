@@ -2,19 +2,18 @@
   <v-container style="max-width: 1200px">
     <v-layout row wrap>
     <v-flex xs12 sm8>
-      <v-card color="white"
-      flat
-      tile
-      class="mb-5"
+      <v-card
+      outlined
+      class="mb-10"
       >
       <article class="post">
         <v-container style="white-space: pre-line; word-break: break-all;">
           <p class="date"><span>{{ formatDate(post.sys.createdAt) }}</span>
           <span class="tag">{{post.fields.category.fields.title}}</span></p>
           <h1>{{ post.fields.title }}</h1>
-          <p class="author">Written by {{post.fields.author.fields.name}}</p>
+          <p class="author">Written by： {{post.fields.author.fields.name}}</p>
           <v-img　
-          class="ma-8" 
+          class="ma-2" 
           :src="post.fields.image.fields.file.url"
           aspect-ratio="1.77" />
           <div class="content" v-html="$md.render(post.fields.content)"></div>
@@ -25,13 +24,13 @@
 
         <v-flex xs12 sm4>
             <article>
-              <profile style="margin: 0 25px 0 25px" />
+              <profile style="margin: 0 25px" />
             </article>
             <article>
               <category-list
               :categories="categories"
-              class="mt-10"
-              style="margin: 0 25px 0 25px"
+              class="mt-10 mb-10"
+              style="margin: 0 25px"
               />
             </article>
         </v-flex>

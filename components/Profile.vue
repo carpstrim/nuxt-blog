@@ -7,7 +7,7 @@
                           </v-list-item-content>
                       </v-list-item>
                   </v-list>
-                <v-card-text><p style="margin: 0 20px 0 20px">一見共通点のない2人が、一緒にブログを運営します。</p><p style="margin: 0 20px 0 20px">思ったことを、思ったままに表現できる場に。</p></v-card-text>
+                <v-card-text><p style="margin: 0 15px 0 15px">一見共通点のない2人が、一緒にブログを運営します。</p><p style="margin: 0 15px 0 15px">思ったことを、思ったままに表現できる場に。</p></v-card-text>
                 <v-divider />
                   <v-row no-gutters>
                     <v-col cols="4">
@@ -75,9 +75,10 @@
                   <v-spacer />
                   <v-btn
                   text
+                  large
                   color="primary"
                   to="/profile"
-                  style="margin-right: 20px">プロフィール詳細 ></v-btn>
+                  style="margin-right: 15px">プロフィール詳細 ></v-btn>
                   </v-layout>
                 </v-card>
 
@@ -101,7 +102,7 @@ export default {
 .node-profile p {
   border-bottom: solid 2px #cce4ff;
   position: relative;
-  margin: 2px 0 0 0
+  margin: 4px 0 0 0
 }
 
 .node-profile p:after{
@@ -118,9 +119,9 @@ export default {
 }
 
 .oni-profile p {
-  border-bottom: solid 2px #FFA726;
+  border-bottom: solid 2px #FFCC80;
   position: relative;
-  margin: 2px 0 0 0
+  margin: 4px 0 0 0
 }
 
 .oni-profile p:after{
