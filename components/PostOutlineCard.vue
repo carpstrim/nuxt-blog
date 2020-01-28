@@ -7,13 +7,13 @@
           <v-layout row wrap>
           <v-flex xs12 sm4>
           <v-img　
-          class="ma-3"
+          class="ma-1 ml-3 mr-3 mb-2"
           :src="post.fields.image.fields.file.url"
           aspect-ratio="1.3"
           />
           </v-flex>
           <v-flex xs12 sm8>
-          <div class="mt-3 ml-2 mb-1">
+          <div class="mt-1 ml-2 mb-1">
           <span>{{ formatDate(post.sys.createdAt) }}</span>
           <v-btn
           outlined
@@ -34,15 +34,16 @@
           </v-card>
           </v-flex>
           </v-layout>
-          
-          <v-layout justify-end align-end>
-          <v-btn
+          <v-card
+          flat
           tile
-          outlined
-          color="primary"
+          hover
+          color="#F5F5F5"
           :to="'/posts/' + post.fields.slug"
-          >続きを読む</v-btn>
-          </v-layout>
+          style="text-align: center; padding: 10px 0"
+          >
+          <span style="font-size: 10pt; color: #424242;">この記事を読む</span>
+          </v-card>
         </v-container>
           </v-card>
 </template>

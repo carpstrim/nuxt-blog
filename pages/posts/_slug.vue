@@ -10,8 +10,8 @@
         <v-container style="white-space: pre-line; word-break: break-all;">
           <p class="date"><span>{{ formatDate(post.sys.createdAt) }}</span>
           <v-btn
-          depressed
-          color="#FFA726"
+          outlined
+          color="orange"
           height="30px"
           :to="'/category/' + post.fields.category.fields.slug"
           style="margin-left: 30px">{{post.fields.category.fields.title}}</v-btn></p>
