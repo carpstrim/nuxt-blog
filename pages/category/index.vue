@@ -9,7 +9,7 @@
             <v-container class="mb-5">
             <category-card
             :category="category"
-            width="70%"
+            width="80%"
             />
             </v-container>
         </div>
@@ -18,13 +18,13 @@
             <article>
               <profile style="margin: 0 25px" />
             </article>
-            <article>
+            <!--<article>
               <category-list
               :categories="categories"
               class="mt-10 mb-10"
               style="margin: 0 25px"
               />
-            </article>
+            </article>-->
         </v-flex>
     </v-layout>
   </v-container>

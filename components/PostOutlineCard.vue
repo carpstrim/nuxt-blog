@@ -35,9 +35,7 @@
           </v-flex>
           </v-layout>
           <v-card
-          flat
-          tile
-          hover
+          outlined
           color="#F5F5F5"
           :to="'/posts/' + post.fields.slug"
           style="text-align: center; padding: 10px 0"

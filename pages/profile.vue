@@ -22,13 +22,13 @@
     </v-flex>
 
         <v-flex xs12 sm4>
-            <article>
+            <!--<article>
               <profile style="margin: 0 25px" />
-            </article>
+            </article>-->
             <article>
               <category-list
               :categories="categories"
-              class="mt-10 mb-10"
+              class="mb-10"
               style="margin: 0 25px"
               />
             </article>
