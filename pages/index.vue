@@ -1,4 +1,3 @@
-<!-- top page & recent articles -->
 <template>
   <v-container style="max-width: 1200px">
     <v-layout row wrap>
@@ -39,7 +38,7 @@ async asyncData({ params }) {
         order: '-sys.createdAt',
       })
       .then(entries => {
-        return entries.items
+        return entries.items.slice(0, 10)
       })
     const categories = await client
       .getEntries({
@@ -53,7 +52,7 @@ async asyncData({ params }) {
       return {posts, categories}
   },
   mounted(){
-    console.log({post:this.posts[0]})
+    console.log({post:this.posts})
     console.log({categories: this.categories})
   },
   head: {

@@ -3,7 +3,7 @@
                   <v-list>
                       <v-list-item link>
                           <v-list-item-content>
-                          <v-list-item-title class="title categoryList" style="text-align: center"><p>プロフィール</p></v-list-item-title>
+                          <v-list-item-title class="title categoryList" style="text-align: center"><p>Profile</p></v-list-item-title>
                           </v-list-item-content>
                       </v-list-item>
                   </v-list>

@@ -3,8 +3,9 @@
     <v-layout row wrap>
     <v-flex xs12 sm8>
       <v-card
-      outlined
-      class="mb-10"
+      flat
+      tile
+      class="mb-10 mr-2 ml-2"
       >
       <article class="post">
         <v-container style="white-space: pre-line; word-break: break-all;">
