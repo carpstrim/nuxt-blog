@@ -7,7 +7,7 @@
                           </v-list-item-content>
                       </v-list-item>
                   </v-list>
-                <v-card-text><p style="margin: 0 15px 0 15px">一見共通点のない2人が、一緒にブログを運営します。</p><p style="margin: 0 15px 0 15px">思ったことを、思ったままに表現できる場に。</p></v-card-text>
+                <v-card-text><!--<p style="margin: 0 15px 0 15px">一見共通点のない2人が、一緒にブログを運営します。</p>--><p style="margin: 0 15px 0 15px">思ったことを、思ったままに表現できる場に。</p></v-card-text>
                 <v-divider />
                   <v-row no-gutters>
                     <v-col cols="4">
@@ -44,7 +44,7 @@
                     </v-col>
                   </v-row>
                   <v-divider />
-                  <v-row no-gutters>
+                  <!--<v-row no-gutters>
                     <v-col cols="8" class="oni-profile">
                       <div style="margin: 0 10px 0 10px">
                       <p>焼きおにぎり</p>
@@ -70,7 +70,7 @@
                       </v-img>
                     </v-col>
                   </v-row>
-                  <v-divider />
+                  <v-divider />-->
                   <v-layout row wrap>
                   <v-spacer />
                   <v-btn
