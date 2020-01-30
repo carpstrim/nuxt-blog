@@ -1,7 +1,7 @@
 <template>
   <v-container style="max-width: 1200px">
     <v-layout row wrap>
-      <v-flex xs12 sm8>
+      <v-flex xs12 sm8 class="mb-5">
         <div v-for="(post, index) in posts" :key="index">
           <post-outline-card
           :post="post"
@@ -43,9 +43,13 @@ async asyncData({ params }) {
     const categories = await client
       .getEntries({
         content_type: 'category',
-        order: '-sys.createdAt',
+        order: '-fields.index',
       })
       .then(entries => {
+        entries.items.forEach(e => {
+          console.log({t: e/*.fields.title,sys:e.sys*/})
+        });
+
         return entries.items.map(e => { return e.fields})
       })
       

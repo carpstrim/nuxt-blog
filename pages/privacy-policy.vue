@@ -9,19 +9,8 @@
       >
       <article class="post">
         <v-container style="white-space: pre-line; word-break: break-all;">
-          <p class="date"><span>{{ formatDate(post.sys.createdAt) }}</span>
-          <v-btn
-          outlined
-          color="orange"
-          height="30px"
-          :to="'/category/' + post.fields.category.fields.slug"
-          style="margin-left: 30px">{{post.fields.category.fields.title}}</v-btn></p>
-          <h1>{{ post.fields.title }}</h1>
-          <p class="author">Writer： {{post.fields.author.fields.name}}</p>
-          <v-img　
-          class="ma-2" 
-          :src="post.fields.image.fields.file.url"
-          aspect-ratio="1.77" />
+          <p class="date"><span>{{ formatDate(post.sys.updatedAt) }}</span></p>
+          <h1>プライバシーポリシー</h1>
           <div class="content" v-html="$md.render(post.fields.content)"></div>
         </v-container>
       </article>
@@ -59,8 +48,7 @@ export default {
 //    if (payload) return { post: payload }
     const post = await client
       .getEntries({
-        content_type: 'post',
-        'fields.slug': params.slug,
+        content_type: 'privacyPoliocy',
       })
       .then(entries => {
         return entries.items[0]
@@ -68,7 +56,7 @@ export default {
     const categories = await client
       .getEntries({
         content_type: 'category',
-        order: '-sys.createdAt',
+        order: '-fields.index',
       })
       .then(entries => {
         return entries.items.map(e => { return e.fields})
@@ -78,7 +66,7 @@ export default {
   },
   head() {
     return {
-      title: this.post.fields.title,
+      title: "プライバシーポリシー",
     }
   },
   mounted() {

@@ -9,12 +9,13 @@
       >
       <article class="post">
         <v-container style="white-space: pre-line; word-break: break-all;">
-          <p class="date"><span>{{ formatDate(post.sys.createdAt) }}</span></p>
-          <h1>{{ post.fields.title }}</h1>
-          <v-img　
+          <p class="date"><span>{{ formatDate(post.sys.updatedAt) }}</span>
+          </p>
+          <h1>プロフィール</h1>
+          <!--<v-img　
           class="ma-2" 
           :src="post.fields.image.fields.file.url"
-          aspect-ratio="1.77" />
+          aspect-ratio="1.77" />-->
           <div class="content" v-html="$md.render(post.fields.content)"></div>
         </v-container>
       </article>
@@ -22,9 +23,6 @@
     </v-flex>
 
         <v-flex xs12 sm4>
-            <!--<article>
-              <profile style="margin: 0 25px" />
-            </article>-->
             <article>
               <category-list
               :categories="categories"
@@ -40,20 +38,17 @@
 <script>
 import client from '~/plugins/contentful'
 import CategoryList from "@/components/CategoryList"
-import Profile from "@/components/Profile"
 
 
 export default {
   components: {
     CategoryList,
-    Profile
   },
   async asyncData({ params, error, payload }) {
 //    if (payload) return { post: payload }
     const post = await client
       .getEntries({
-        content_type: 'post',
-        'fields.slug': params.slug,
+        content_type: 'profile',
       })
       .then(entries => {
         return entries.items[0]
@@ -61,7 +56,7 @@ export default {
     const categories = await client
       .getEntries({
         content_type: 'category',
-        order: '-sys.createdAt',
+        order: '-fields.index',
       })
       .then(entries => {
         return entries.items.map(e => { return e.fields})
@@ -71,7 +66,7 @@ export default {
   },
   head() {
     return {
-      title: this.post.fields.title,
+      title: "プロフィール",
     }
   },
   mounted() {
