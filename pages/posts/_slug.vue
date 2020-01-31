@@ -68,7 +68,7 @@ export default {
     const categories = await client
       .getEntries({
         content_type: 'category',
-        order: '-fields.index',
+        order: 'fields.index',
       })
       .then(entries => {
         return entries.items.map(e => { return e.fields})
@@ -79,6 +79,17 @@ export default {
   head() {
     return {
       title: this.post.fields.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.post.fields.outline },
+        { hid: 'og:site_name', property: 'og:site_name', content: this.post.fields.title + ' - COLOR PALETTE' },
+        { hid: 'og:type', property: 'og:type', content: 'article' },
+        { hid: 'og:url', property: 'og:url', content: 'https://color-in-k.com/posts/' + this.post.fields.slug },
+        { hid: 'og:title', property: 'og:title', content: this.post.fields.title },
+        { hid: 'og:description', property: 'og:description', content: this.post.fields.outline },
+        { hid: 'og:image', property: 'og:image', content: this.post.fields.image.fields.file.url },
+        { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
+        { hid: 'twitter:site', name: 'twitter:site', content: '@node_mental' }
+      ]
     }
   },
   mounted() {

@@ -42,7 +42,7 @@ async asyncData({ params }) {
     const categories = await client
       .getEntries({
         content_type: 'category',
-        order: '-fields.index',
+        order: 'fields.index',
       })
       .then(entries => {
         return entries.items.map(e => { return e.fields})
@@ -54,7 +54,7 @@ async asyncData({ params }) {
     console.log({categories: this.categories})
   },
   head: {
-    title: '記事一覧',
+    title: 'カテゴリー',
   },
   components: {
     CategoryList,

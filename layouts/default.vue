@@ -49,13 +49,9 @@
       color="white"
       @click="drawer= !drawer"><v-icon>mdi-menu</v-icon></v-btn>
       <v-card-title style="font-size: 20pt" class="mb-2">COLOR PALETTE</v-card-title>
-      <v-card-subtitle style="color: white; font-size: 14pt; margin-left: 10px">ー 私の色づくり ー</v-card-subtitle>
+      <v-card-subtitle style="color: white; font-size: 14pt; margin-left: 10px">気ままなブログ<!--ー 私の色づくり ー--></v-card-subtitle>
     </v-img>
 
-
-     <!--<v-card-text class="text--primary">
-       サブタイトル的な説明を入れるときに使用
-    </v-card-text>-->
 
     <v-card-actions>
       <v-layout row wrap justify-space-around>

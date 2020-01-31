@@ -29,6 +29,7 @@ import client from '~/plugins/contentful'
 import CategoryList from "@/components/CategoryList"
 import Profile from "@/components/Profile"
 import PostOutlineCard from "@/components/PostOutlineCard"
+import topImg from "@/static/top.jpg"
 
 export default {
 async asyncData({ params }) {
@@ -43,13 +44,9 @@ async asyncData({ params }) {
     const categories = await client
       .getEntries({
         content_type: 'category',
-        order: '-fields.index',
+        order: 'fields.index',
       })
       .then(entries => {
-        entries.items.forEach(e => {
-          console.log({t: e/*.fields.title,sys:e.sys*/})
-        });
-
         return entries.items.map(e => { return e.fields})
       })
       
@@ -61,6 +58,17 @@ async asyncData({ params }) {
   },
   head: {
     title: 'トップ',
+    meta: [
+        { hid: 'description', name: 'description', content: "思ったままを気ままに綴るブログ。" },
+        { hid: 'og:site_name', property: 'og:site_name', content: 'TOP - COLOR PALETTE' },
+        { hid: 'og:type', property: 'og:type', content: 'website' },
+        { hid: 'og:url', property: 'og:url', content: 'https://color-in-k.com/' },
+        { hid: 'og:title', property: 'og:title', content: 'トップ' },
+        { hid: 'og:description', property: 'og:description', content: "思ったままを気ままに綴るブログ。" },
+        { hid: 'og:image', property: 'og:image', content: topImg },
+        { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
+        { hid: 'twitter:site', name: 'twitter:site', content: '@node_mental' }
+      ]
   },
   components: {
     CategoryList,
@@ -69,7 +77,7 @@ async asyncData({ params }) {
   },
   data(){
     return {
-
+      topImg
     }
   },
   methods: {
