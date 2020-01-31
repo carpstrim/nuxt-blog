@@ -15,7 +15,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'og:image', property: 'og:image', content: '/top.jpg' },
+      { hid: 'og:image', property: 'og:image', content: 'https://drive.google.com/file/d/1fTkkQ02l-aeTjhAHC-Ub44_Ra08vu7R5/view' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
