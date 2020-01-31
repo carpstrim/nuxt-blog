@@ -17,7 +17,7 @@
           
         <form name="contact" method="POST" data-netlify="true">
         <div class="cp_iptxt">
-          <input type="hidden" name="contact" value="contact" />
+          <input type="hidden" name="form-name" value="contact">
           <p class="mb-10">
           <label class="ef">
             <input type="text" placeholder="お名前" name="name">
