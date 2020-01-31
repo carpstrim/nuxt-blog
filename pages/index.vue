@@ -56,7 +56,7 @@ async asyncData({ params }) {
     console.log({categories: this.categories})
   },
   head: {
-    title: 'トップ',
+    title: 'ホーム',
     meta: [
         { hid: 'description', name: 'description', content: "思ったままを気ままに綴るブログ。" },
         { hid: 'og:site_name', property: 'og:site_name', content: 'TOP - COLOR PALETTE' },

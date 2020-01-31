@@ -154,7 +154,7 @@ export default {
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Top',
+          title: 'Home',
           to: '/'
         },
         {

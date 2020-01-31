@@ -119,9 +119,6 @@ async asyncData({ params }) {
   width: 30%;
 }
 
-</style>
-
-<style>
 .cp_iptxt {
 	position: relative;
 	width: 60%;
