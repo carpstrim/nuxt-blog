@@ -2,6 +2,8 @@ require("dotenv").config() //一番上に
 const client = require("./plugins/contentful")
 
 import colors from 'vuetify/es5/util/colors'
+import topImg from "@/static/top.jpg"
+
 
 export default {
   mode: 'universal',
@@ -14,6 +16,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'og:image', property: 'og:image', content: topImg },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }

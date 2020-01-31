@@ -63,7 +63,7 @@ async asyncData({ params }) {
         { hid: 'og:site_name', property: 'og:site_name', content: 'TOP - COLOR PALETTE' },
         { hid: 'og:type', property: 'og:type', content: 'website' },
         { hid: 'og:url', property: 'og:url', content: 'https://color-in-k.com/' },
-        { hid: 'og:title', property: 'og:title', content: 'トップ' },
+        { hid: 'og:title', property: 'og:title', content: 'COLOR PALETTE' },
         { hid: 'og:description', property: 'og:description', content: "思ったままを気ままに綴るブログ。" },
         { hid: 'og:image', property: 'og:image', content: topImg },
         { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
