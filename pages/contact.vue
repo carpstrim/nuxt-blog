@@ -15,7 +15,7 @@
         <p>（ <a href="https://twitter.com/node_mental">Twitter</a>のリプライおよびDM、<a href="https://lin.ee/80IgBws">LINE公式アカウント</a>でもメッセージを受け付けています。)</p>
         </div>
           
-        <form name="contact" method="POST" data-netlify="true">
+        <form name="contact" method="POST" data-netlify="true" action="thank-you">
         <div class="cp_iptxt">
           <input type="hidden" name="form-name" value="contact">
           <p class="mb-10">
