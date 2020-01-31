@@ -76,7 +76,7 @@ async asyncData({ params }) {
   },
   data(){
     return {
-      topImg
+      
     }
   },
   methods: {
