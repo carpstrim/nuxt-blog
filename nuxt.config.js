@@ -49,7 +49,11 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    '@nuxtjs/sitemap',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-157474508-1'
+    }]
   ],
   /*
   ** Axios module configuration
@@ -107,6 +111,18 @@ export default {
             }
           })
         })
+    }
+  },
+  sitemap: {
+    hostname: 'https://color-in-k.com',
+    routes() {
+      return client
+      .getEntries({ content_type: 'post' })
+      .then(entries => {
+        return entries.items.map(entry => {
+          return "/posts/" + entry.fields.slug
+        })
+      })
     }
   },
   env: {

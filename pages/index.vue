@@ -29,7 +29,6 @@ import client from '~/plugins/contentful'
 import CategoryList from "@/components/CategoryList"
 import Profile from "@/components/Profile"
 import PostOutlineCard from "@/components/PostOutlineCard"
-import topImg from "@/static/top.jpg"
 
 export default {
 async asyncData({ params }) {
@@ -65,7 +64,7 @@ async asyncData({ params }) {
         { hid: 'og:url', property: 'og:url', content: 'https://color-in-k.com/' },
         { hid: 'og:title', property: 'og:title', content: 'COLOR PALETTE' },
         { hid: 'og:description', property: 'og:description', content: "思ったままを気ままに綴るブログ。" },
-        { hid: 'og:image', property: 'og:image', content: topImg },
+        //{ hid: 'og:image', property: 'og:image', content: topImg },
         { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
         { hid: 'twitter:site', name: 'twitter:site', content: '@node_mental' }
       ]
