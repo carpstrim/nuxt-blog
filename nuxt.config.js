@@ -15,7 +15,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'og:image', property: 'og:image', content: 'https://drive.google.com/file/d/1fTkkQ02l-aeTjhAHC-Ub44_Ra08vu7R5/view' },
+      { hid: 'og:image', property: 'og:image', content: 'https://lh3.googleusercontent.com/u_t50jA6V7Rt0XVcVbbDvU5qSB2mrzOgpdjpBsOwAzBmSdaM4CBmAkKgu2C7Ffji-bYXyi_QEmm6Z4Sdv7jZPlHmVOCilLw_sNNT7wDdol6_pXXdWjWuvJMeUEgALG8F8haGln5ytg=w2400' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
