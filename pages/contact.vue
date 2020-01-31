@@ -6,26 +6,42 @@
         <h1>お問い合わせ</h1>
         </div>
 
+        <v-container>
+        <v-card flat tile>
+        <v-container>
+        <div class="mt-5 mr-5 ml-5">
+        <p>以下のフォームに、お問い合わせ事項を記入の上、「送信」ボタンを押してください。</p>
+        <p>確認しだい、記入いただいたメールアドレスに返信いたします。</p>
+        <p>（ <a href="https://twitter.com/node_mental">Twitter</a>のリプライおよびDM、<a href="https://lin.ee/80IgBws">LINE公式アカウント</a>でもメッセージを受け付けています。)</p>
+        </div>
+          
         <form name="contact" method="POST" data-netlify="true">
+        <div class="cp_iptxt">
+          <input type="hidden" name="contact" value="contact" />
+          <p class="mb-10">
+          <label class="ef">
+            <input type="text" placeholder="お名前" name="name">
+          </label>
+          </p>
+
+          <p class="mb-10">
+          <label class="ef">
+            <input type="email" placeholder="e-mail" name="email">
+          </label>
+          </p>
+          </div>
+          <div class="cp_textarea">
         <p>
-            <label>Your Name: <input type="text" name="name" /></label>   
+            <label class="ef">Message： <textarea name="message"></textarea></label>
         </p>
+          </div>
         <p>
-            <label>Your Email: <input type="email" name="email" /></label>
-        </p>
-        <p>
-            <label>Your Role: <select name="role[]" multiple>
-            <option value="leader">Leader</option>
-            <option value="follower">Follower</option>
-            </select></label>
-        </p>
-        <p>
-            <label>Message: <textarea name="message"></textarea></label>
-        </p>
-        <p>
-            <button type="submit">Send</button>
+            <v-btn color="primary" style="margin-left: 40px" type="submit">送信</v-btn>
         </p>
         </form>
+        </v-container>
+        </v-card>
+        </v-container>
 
       </v-flex>
         <v-flex xs12 sm4>
@@ -102,5 +118,72 @@ async asyncData({ params }) {
   bottom: -3px;
   width: 30%;
 }
+
+</style>
+
+<style>
+.cp_iptxt {
+	position: relative;
+	width: 60%;
+	margin: 50px 3%;
+}
+.cp_iptxt input[type='text'] {
+	font: 15px/24px;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: #424242;
+	border: none;
+	border-bottom: 2px solid #1b2538;
+	background: transparent;
+}
+
+.ef input[type='text']:focus {
+	border-bottom: 2px solid #cce4ff;
+	outline: none;
+}
+
+
+.ef input[type='email']:focus {
+	border-bottom: 2px solid #cce4ff;
+	outline: none;
+}
+
+.cp_iptxt input[type='email'] {
+	font: 15px/24px;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: #424242;
+	border: none;
+	border-bottom: 2px solid #1b2538;
+	background: transparent;
+}
+
+.cp_textarea{
+  position: relative;
+	width: 80%;
+	margin: 50px 3%;
+  color: #424242
+}
+
+.cp_textarea textarea {
+	font: 15px/24px;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: #424242;
+	border: none;
+	border-bottom: 2px solid #1b2538;
+	background: transparent;
+}
+
+
 
 </style>
