@@ -74,7 +74,7 @@
       <v-btn
         color="primary"
         text
-        to="contact"
+        to="/contact"
       >
         Contact
       </v-btn>

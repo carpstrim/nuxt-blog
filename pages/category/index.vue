@@ -16,7 +16,7 @@
       </v-flex>
         <v-flex xs12 sm4>
             <article>
-              <profile style="margin: 0 25px" />
+              <profile class="mb-10" style="margin: 0 25px" />
             </article>
             <!--<article>
               <category-list
@@ -25,6 +25,7 @@
               style="margin: 0 25px"
               />
             </article>-->
+            <twitter-window style="margin: 0 25px" />
         </v-flex>
     </v-layout>
   </v-container>
@@ -35,6 +36,7 @@ import client from '~/plugins/contentful'
 import CategoryList from "@/components/CategoryList"
 import Profile from "@/components/Profile"
 import CategoryCard from "@/components/CategoryCard"
+import TwitterWindow from "@/components/TwitterWindow"
 
 export default {
 async asyncData({ params }) {
@@ -59,7 +61,8 @@ async asyncData({ params }) {
   components: {
     CategoryList,
     Profile,
-    CategoryCard
+    CategoryCard,
+    TwitterWindow
   },
   data(){
     return {

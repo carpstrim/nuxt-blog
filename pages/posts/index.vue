@@ -22,6 +22,7 @@
               style="margin: 0 25px"
               />
             </article>
+            <twitter-window style="margin: 0 25px" />
         </v-flex>
     </v-layout>
   </v-container>
@@ -32,6 +33,7 @@ import client from '~/plugins/contentful'
 import CategoryList from "@/components/CategoryList"
 import Profile from "@/components/Profile"
 import PostOutlineCard from "@/components/PostOutlineCard"
+import TwitterWindow from "@/components/TwitterWindow"
 
 export default {
 async asyncData({ params }) {
@@ -64,7 +66,8 @@ async asyncData({ params }) {
   components: {
     CategoryList,
     Profile,
-    PostOutlineCard
+    PostOutlineCard,
+    TwitterWindow
   },
   data(){
     return {

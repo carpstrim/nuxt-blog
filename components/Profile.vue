@@ -7,7 +7,7 @@
                           </v-list-item-content>
                       </v-list-item>
                   </v-list>
-                <v-card-text><!--<p style="margin: 0 15px 0 15px">一見共通点のない2人が、一緒にブログを運営します。</p>--><p style="margin: 0 15px 0 15px">思ったことを、思ったままに表現できる場に。</p></v-card-text>
+                <v-card-text><!--<p style="margin: 0 15px 0 15px">一見共通点のない2人が、一緒にブログを運営します。</p>--><p style="margin: 0 15px 0 15px">思ったことを、思ったままに表現できる場に。<br>メンタルに自信がないけど、自信がないなりに工夫して合理的に生きていく。</p></v-card-text>
                 <v-divider />
                   <v-row no-gutters>
                     <v-col cols="4">
@@ -21,7 +21,7 @@
                       <div style="margin: 0 10px 0 10px">
                       <p>のーど</p>
                       <span>運営者・ライター</span><br>
-                      <span>フリーランスのプログラマーです</span><br>
+                      <span>フリーランス Webプログラマー</span><br>
                       <v-btn
                       color="primary"
                       href="https://twitter.com/node_mental"
