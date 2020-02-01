@@ -26,7 +26,7 @@
             <article>
               <category-list
               :categories="categories"
-              class="mb-5"
+              class="mt-5 mb-5"
               style="margin: 0 25px"
               />
             </article>

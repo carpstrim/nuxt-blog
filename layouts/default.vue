@@ -94,7 +94,7 @@
       text
       large
       color="grey darken-1"
-      to="/"
+      to="/#header"
       class="mb-2"
       style="margin-right: 15px">< Homeに戻る</v-btn>
 </div>
