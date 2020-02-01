@@ -89,7 +89,15 @@
       </v-content>
 </template>
 
-
+<div style="max-width:1200px" class="mx-auto">
+  <v-btn
+      text
+      large
+      color="grey darken-1"
+      to="/"
+      class="mb-2"
+      style="margin-right: 15px">< Homeに戻る</v-btn>
+</div>
     <v-footer
     color="cyan lighten-2"
     padless

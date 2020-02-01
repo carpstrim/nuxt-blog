@@ -7,7 +7,7 @@
         </div>
 
         <v-container>
-        <v-card flat tile>
+        <v-card flat tile class="mb-2">
         <v-container>
         <div class="mt-5 mr-5 ml-5">
         <p>以下のフォームに、お問い合わせ事項を記入の上、「送信」ボタンを押してください。</p>
@@ -51,7 +51,7 @@
             <article>
               <category-list
               :categories="categories"
-              class="mt-10 mb-10"
+              class="mt-10 mb-5"
               style="margin: 0 25px"
               />
             </article>

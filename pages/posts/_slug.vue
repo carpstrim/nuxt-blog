@@ -5,7 +5,7 @@
       <v-card
       flat
       tile
-      class="mb-10 mr-3 ml-3"
+      class="mb-2 mr-3 ml-3"
       >
       <article class="post">
         <v-container style="white-space: pre-line; word-break: break-all;">
@@ -35,7 +35,7 @@
             <article>
               <category-list
               :categories="categories"
-              class="mt-10 mb-10"
+              class="mt-10 mb-5"
               style="margin: 0 25px"
               />
             </article>
