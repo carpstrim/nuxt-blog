@@ -5,7 +5,7 @@
       <v-card
       flat
       tile
-      class="mb-10 mr-2 ml-2"
+      class="mb-10 mr-3 ml-3"
       >
       <article class="post">
         <v-container style="white-space: pre-line; word-break: break-all;">
@@ -106,36 +106,6 @@ export default {
   width: 20%;
 }
 
-.post h2 {
-  padding: 0.5em;/*文字周りの余白*/
-  color: #494949;/*文字色*/
-  background: #cce4ff;/*背景色*/
-  border-left: solid 5px #5472cd;/*左線（実線 太さ 色）*/
-  margin: 20px 0 20px 0
-}
-
-.post h3 {
-  color: #6594e0;/*文字色*/
-  /*線の種類（点線）2px 線色*/
-  border-bottom: dashed 2px #6594e0;
-  margin: 15px 1rem 10px 1rem;
-}
-
-.post p {
-  margin: 10px 1rem 0 1rem;
-}
-
-
-.post .author {
-  text-align: right;
-  margin-top: 7px;
-  color: #5472cd;
-  font-size: 13pt;
-}
-
-.post .content {
-  margin-top: 40px;
-}
 
 
 

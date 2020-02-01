@@ -5,7 +5,7 @@
       <v-card
       flat
       tile
-      class="mb-10 mr-2 ml-2"
+      class="mb-10 mr-3 ml-3"
       >
       <article class="post">
         <v-container style="white-space: pre-line; word-break: break-all;">

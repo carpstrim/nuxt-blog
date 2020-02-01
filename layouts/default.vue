@@ -49,7 +49,7 @@
       color="white"
       @click="drawer= !drawer"><v-icon>mdi-menu</v-icon></v-btn>
       <v-card-title style="font-size: 20pt" class="mb-2">COLOR PALETTE</v-card-title>
-      <v-card-subtitle style="color: white; font-size: 14pt; margin-left: 10px">気ままなブログ<!--ー 私の色づくり ー--></v-card-subtitle>
+      <v-card-subtitle style="color: white; font-size: 14pt; margin-left: 10px">気ままに綴るブログ<!--ー 私の色づくり ー--></v-card-subtitle>
     </v-img>
 
 
