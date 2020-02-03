@@ -36,7 +36,7 @@
           </v-layout>
           <v-card
           outlined
-          color="#F5F5F5"
+          color="#EEEEEE"
           :to="'/posts/' + post.fields.slug"
           style="text-align: center; padding: 10px 0"
           >

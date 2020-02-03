@@ -38,14 +38,14 @@ async asyncData({ params }) {
     const posts = await client
       .getEntries({
         content_type: 'post',
+        'fields.category.sys.contentType.sys.id': 'category',
+        'fields.category.fields.slug': params.category,
         order: '-sys.createdAt',
       })
       .then(entries => {
         return entries.items
       })
-      
-    const categoryPosts = await posts.filter(el => el.fields.category.fields.slug === params.category)
-    
+          
 
     const categories = await client
       .getEntries({
@@ -59,7 +59,7 @@ async asyncData({ params }) {
     const selectedCategoryName = await categories.filter(el => el.slug === params.category)[0].title
     console.log({selectedCategoryName})
       
-      return {params, posts:categoryPosts, categories, selectedCategoryName}
+      return {params, posts, categories, selectedCategoryName}
   },
   mounted(){
     console.log({post:this.posts})
