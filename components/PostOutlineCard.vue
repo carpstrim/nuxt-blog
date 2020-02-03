@@ -10,6 +10,8 @@
           class="ma-1 ml-3 mr-3 mb-2"
           :src="post.fields.image.fields.file.url"
           aspect-ratio="1.3"
+          @click="$router.push('/posts/' + post.fields.slug)"
+          style="cursor: pointer"
           />
           </v-flex>
           <v-flex xs12 sm8>

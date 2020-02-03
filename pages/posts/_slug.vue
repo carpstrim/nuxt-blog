@@ -21,7 +21,8 @@
           <v-img　
           class="ma-2" 
           :src="post.fields.image.fields.file.url"
-          aspect-ratio="1.77" />
+          aspect-ratio="1.77"
+           />
           <div class="content" v-html="$md.render(post.fields.content)"></div>
         </v-container>
       </article>
