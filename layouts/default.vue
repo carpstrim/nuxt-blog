@@ -53,7 +53,7 @@
       class="mb-2"
       @click="$router.push('/')"
       >COLOR PALETTE</v-card-title>
-      <v-card-subtitle style="color: white; font-size: 14pt; margin-left: 10px">気ままに綴るブログ<!--ー 私の色づくり ー--></v-card-subtitle>
+      <v-card-subtitle style="color: white; font-size: 14pt; margin-left: 10px">ー 思うままに綴るブログ ー<!--ー 私の色づくり ー--></v-card-subtitle>
     </v-img>
 
 
