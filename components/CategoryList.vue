@@ -1,7 +1,7 @@
 <template>
     <v-card>
         <v-list>
-            <v-list-item link to="/category">
+            <v-list-item link to="/category/">
                 <v-list-item-content>
                 <v-list-item-title class="title categoryList" style="text-align: center"><p>Category</p></v-list-item-title>
                 </v-list-item-content>

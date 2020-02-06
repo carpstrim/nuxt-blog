@@ -77,7 +77,7 @@
                   text
                   large
                   color="primary"
-                  to="/profile"
+                  to="/profile/"
                   style="margin-right: 15px">プロフィール詳細 ></v-btn>
                   </v-layout>
                 </v-card>

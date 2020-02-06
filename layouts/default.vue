@@ -70,7 +70,7 @@
       <v-btn
         color="primary"
         text
-        to="/profile"
+        to="/profile/"
       >
         Profile
       </v-btn>
@@ -78,7 +78,7 @@
       <v-btn
         color="primary"
         text
-        to="/contact"
+        to="/contact/"
       >
         Contact
       </v-btn>
@@ -117,7 +117,7 @@
         rounded
         class="my-2"
         style="margin-left: 20px"
-        to="/profile"
+        to="/profile/"
       >
         プロフィール
       </v-btn>
@@ -127,7 +127,7 @@
         rounded
         class="my-2"
         style="margin-left: 20px"
-        to="/contact"
+        to="/contact/"
 
       >
         お問い合わせ
@@ -138,7 +138,7 @@
         rounded
         class="my-2"
         style="margin-left: 20px"
-        to="/privacy-policy"
+        to="/privacy-policy/"
       >
         プライバシーポリシー
       </v-btn>
@@ -172,22 +172,22 @@ export default {
         {
           icon: 'mdi-account',
           title: 'プロフィール',
-          to: '/profile'
+          to: '/profile/'
         },
         {
           icon: 'mdi-tag-multiple',
           title: 'カテゴリー',
-          to: '/category'
+          to: '/category/'
         },
         {
           icon: 'mdi-newspaper-variant',
           title: '記事一覧',
-          to: '/posts'
+          to: '/posts/'
         },
         {
           icon: 'mdi-email-send',
           title: 'お問い合わせ',
-          to: '/contact'
+          to: '/contact/'
         }
       ],
       miniVariant: false,

@@ -109,7 +109,7 @@ export default {
         .then(entries => {
           return entries.items.map(entry => {
             return {
-              route: "/posts/"+entry.fields.slug,
+              route: "/posts/"+entry.fields.slug + "/",
               payload: entry
             }
           })
@@ -123,7 +123,7 @@ export default {
       .getEntries({ content_type: 'post' })
       .then(entries => {
         return entries.items.map(entry => {
-          return "/posts/" + entry.fields.slug
+          return "/posts/" + entry.fields.slug + "/"
         })
       })
     }
