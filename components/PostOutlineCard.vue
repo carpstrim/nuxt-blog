@@ -24,7 +24,7 @@
           :to="'/category/' + post.fields.category.fields.slug"
           style="margin-left: 20px">{{post.fields.category.fields.title}}</v-btn>
           </div>
-            <nuxt-link :to="'posts/'+post.fields.slug + '/'" style="text-decoration: none">
+            <nuxt-link :to="'/posts/'+post.fields.slug + '/'" style="text-decoration: none">
           <h2 class="mr-1 ml-1 pb-1">{{ post.fields.title }}</h2>
           </nuxt-link>
           <v-card
