@@ -3,87 +3,78 @@
     <v-layout row wrap>
       <v-flex xs12 sm8>
         <div class="page-title">
-        <h1>記事一覧</h1>
+          <h1>記事一覧</h1>
         </div>
         <div v-for="(post, index) in posts" :key="index">
-          <post-outline-card
-          :post="post"
-          />
+          <post-outline-card :post="post" />
         </div>
       </v-flex>
-        <v-flex xs12 sm4>
-            <article>
-              <profile style="margin: 0 25px" />
-            </article>
-            <article>
-              <category-list
-              :categories="categories"
-              class="mt-10 mb-10"
-              style="margin: 0 25px"
-              />
-            </article>
-            
-        </v-flex>
+      <v-flex xs12 sm4>
+        <article>
+          <profile style="margin: 0 25px" />
+        </article>
+        <article>
+          <category-list :categories="categories" class="mt-10 mb-10" style="margin: 0 25px" />
+        </article>
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
-import client from '~/plugins/contentful'
-import CategoryList from "@/components/CategoryList"
-import Profile from "@/components/Profile"
-import PostOutlineCard from "@/components/PostOutlineCard"
+import client from "~/plugins/contentful";
+import CategoryList from "@/components/CategoryList";
+import Profile from "@/components/Profile";
+import PostOutlineCard from "@/components/PostOutlineCard";
 
 export default {
-async asyncData({ params }) {
+  async asyncData({ params }) {
     const posts = await client
       .getEntries({
-        content_type: 'post',
-        order: '-sys.createdAt',
+        content_type: "post",
+        order: "-fields.createdAt"
       })
       .then(entries => {
-        return entries.items
-      })
+        return entries.items;
+      });
     const categories = await client
       .getEntries({
-        content_type: 'category',
-        order: 'fields.index',
+        content_type: "category",
+        order: "fields.index"
       })
       .then(entries => {
-        return entries.items.map(e => { return e.fields})
-      })
-      
-      return {posts, categories}
+        return entries.items.map(e => {
+          return e.fields;
+        });
+      });
+
+    return { posts, categories };
   },
-  mounted(){
-    console.log({post:this.posts[0]})
-    console.log({categories: this.categories})
+  mounted() {
+    console.log({ post: this.posts[0] });
+    console.log({ categories: this.categories });
   },
   head: {
-    title: '記事一覧',
+    title: "記事一覧"
   },
   components: {
     CategoryList,
     Profile,
-    PostOutlineCard,
+    PostOutlineCard
   },
-  data(){
-    return {
-
-    }
+  data() {
+    return {};
   },
-  methods: {
-
-  }
-}
+  methods: {}
+};
 </script>
 
 <style>
-.page-title h1{
-    color: #424242;
-    font-size: 20pt;
-    position: relative;
-    margin: 10px 10px 30px 10px
+.page-title h1 {
+  color: #424242;
+  font-size: 20pt;
+  position: relative;
+  margin: 10px 10px 30px 10px;
 }
 
 .page-title h1:after {
@@ -94,5 +85,4 @@ async asyncData({ params }) {
   bottom: -3px;
   width: 30%;
 }
-
 </style>

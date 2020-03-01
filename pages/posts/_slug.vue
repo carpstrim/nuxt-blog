@@ -1,124 +1,133 @@
 <template>
   <v-container style="max-width: 1200px">
     <v-layout row wrap>
-    <v-flex xs12 sm8>
-      <v-card
-      flat
-      tile
-      class="mb-2 mr-3 ml-3"
-      >
-      <article class="post">
-        <v-container style="white-space: pre-line; word-break: break-all;">
-          <p class="date"><span>{{ formatDate(post.sys.createdAt) }}</span>
-          <v-btn
-          outlined
-          color="orange"
-          height="30px"
-          :to="'/category/' + post.fields.category.fields.slug"
-          style="margin-left: 30px">{{post.fields.category.fields.title}}</v-btn></p>
-          <h1>{{ post.fields.title }}</h1>
-          <p class="author">Writer： {{post.fields.author.fields.name}}</p>
-          <v-img　
-          class="ma-2" 
-          :src="post.fields.image.fields.file.url"
-          aspect-ratio="1.77"
-           />
-          <div class="content" v-html="$md.render(post.fields.content)"></div>
-        </v-container>
-      </article>
-      </v-card>
-    </v-flex>
+      <v-flex xs12 sm8>
+        <v-card flat tile class="mb-2 mr-3 ml-3">
+          <article class="post">
+            <v-container style="white-space: pre-line; word-break: break-all;">
+              <p class="date">
+                <span>{{ formatDate(post.fields.createdAt) }}</span>
+                <v-btn
+                  outlined
+                  color="orange"
+                  height="30px"
+                  :to="'/category/' + post.fields.category.fields.slug"
+                  style="margin-left: 30px"
+                >{{post.fields.category.fields.title}}</v-btn>
+              </p>
+              <h1>{{ post.fields.title }}</h1>
+              <p class="author">Writer： {{post.fields.author.fields.name}}</p>
+              <v-img　 class="ma-2" :src="post.fields.image.fields.file.url" aspect-ratio="1.77" />
+              <div class="content" v-html="$md.render(post.fields.content)"></div>
+            </v-container>
+          </article>
+        </v-card>
+      </v-flex>
 
-        <v-flex xs12 sm4>
-            <article>
-              <profile style="margin: 0 25px" />
-            </article>
-            <article>
-              <category-list
-              :categories="categories"
-              class="mt-10 mb-5"
-              style="margin: 0 25px"
-              />
-            </article>
-        </v-flex>
-        </v-layout>
-      </v-container>
+      <v-flex xs12 sm4>
+        <article>
+          <profile style="margin: 0 25px" />
+        </article>
+        <article>
+          <category-list :categories="categories" class="mt-10 mb-5" style="margin: 0 25px" />
+        </article>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
-import client from '~/plugins/contentful'
-import CategoryList from "@/components/CategoryList"
-import Profile from "@/components/Profile"
-
+import client from "~/plugins/contentful";
+import CategoryList from "@/components/CategoryList";
+import Profile from "@/components/Profile";
 
 export default {
   components: {
     CategoryList,
-    Profile,
+    Profile
   },
   async asyncData({ params, error, payload }) {
-//    if (payload) return { post: payload }
+    //    if (payload) return { post: payload }
     const post = await client
       .getEntries({
-        content_type: 'post',
-        'fields.slug': params.slug,
+        content_type: "post",
+        "fields.slug": params.slug
       })
       .then(entries => {
-        return entries.items[0]
-      })
+        return entries.items[0];
+      });
     const categories = await client
       .getEntries({
-        content_type: 'category',
-        order: 'fields.index',
+        content_type: "category",
+        order: "fields.index"
       })
       .then(entries => {
-        return entries.items.map(e => { return e.fields})
-      })
-      
-      return {post, categories}
+        return entries.items.map(e => {
+          return e.fields;
+        });
+      });
+
+    return { post, categories };
   },
   head() {
     return {
       title: this.post.fields.title,
       meta: [
-        { hid: 'description', name: 'description', content: this.post.fields.outline },
-        { hid: 'og:site_name', property: 'og:site_name', content: this.post.fields.title + ' - COLOR PALETTE' },
-        { hid: 'og:type', property: 'og:type', content: 'article' },
-        { hid: 'og:url', property: 'og:url', content: 'https://color-in-k.com/posts/' + this.post.fields.slug },
-        { hid: 'og:title', property: 'og:title', content: this.post.fields.title },
-        { hid: 'og:description', property: 'og:description', content: this.post.fields.outline },
+        {
+          hid: "description",
+          name: "description",
+          content: this.post.fields.outline
+        },
+        {
+          hid: "og:site_name",
+          property: "og:site_name",
+          content: this.post.fields.title + " - COLOR PALETTE"
+        },
+        { hid: "og:type", property: "og:type", content: "article" },
+        {
+          hid: "og:url",
+          property: "og:url",
+          content: "https://color-in-k.com/posts/" + this.post.fields.slug
+        },
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: this.post.fields.title
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content: this.post.fields.outline
+        },
         //{ hid: 'og:image', property: 'og:image', content: this.post.fields.image.fields.file.url },
-        { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
-        { hid: 'twitter:site', name: 'twitter:site', content: '@node_mental' }
+        { hid: "twitter:card", name: "twitter:card", content: "summary" },
+        { hid: "twitter:site", name: "twitter:site", content: "@node_mental" }
       ]
-    }
+    };
   },
   mounted() {
-    console.log({post: this.post, categories: this.categories})
+    console.log({ post: this.post, categories: this.categories });
   },
-  data(){
-    return {
-
-    }
+  data() {
+    return {};
   },
   methods: {
     formatDate(iso) {
-      const date = new Date(iso)
-      const yyyy = new String(date.getFullYear())
-      const mm = new String(date.getMonth() + 1).padStart(2, "0")
-      const dd = new String(date.getDate()).padStart(2, "0")
-      return `${yyyy}-${mm}-${dd}`
+      const date = new Date(iso);
+      const yyyy = new String(date.getFullYear());
+      const mm = new String(date.getMonth() + 1).padStart(2, "0");
+      const dd = new String(date.getDate()).padStart(2, "0");
+      return `${yyyy}-${mm}-${dd}`;
     }
   }
-}
+};
 </script>
 
 <style>
-
 .post h1 {
   border-bottom: solid 3px #cce4ff;
   position: relative;
-  margin: 20px 10px 0 10px
+  margin: 20px 10px 0 10px;
 }
 
 .post h1:after {
@@ -131,15 +140,15 @@ export default {
 }
 
 .post h2 {
-  padding: 0.5em;/*文字周りの余白*/
-  color: #494949;/*文字色*/
-  background: #cce4ff;/*背景色*/
-  border-left: solid 5px #5472cd;/*左線（実線 太さ 色）*/
-  margin: 20px 0 20px 0
+  padding: 0.5em; /*文字周りの余白*/
+  color: #494949; /*文字色*/
+  background: #cce4ff; /*背景色*/
+  border-left: solid 5px #5472cd; /*左線（実線 太さ 色）*/
+  margin: 20px 0 20px 0;
 }
 
 .post h3 {
-  color: #6594e0;/*文字色*/
+  color: #6594e0; /*文字色*/
   /*線の種類（点線）2px 線色*/
   border-bottom: dashed 2px #6594e0;
   margin: 15px 3% 10px 3%;
@@ -148,7 +157,6 @@ export default {
 .post p {
   margin: 10px 1rem 0 1rem;
 }
-
 
 .post .author {
   text-align: right;
@@ -161,12 +169,8 @@ export default {
   margin-top: 40px;
 }
 
-
 .post .content p {
   margin: 15px 5%;
   font-size: 13pt;
 }
-
-
-
 </style>
