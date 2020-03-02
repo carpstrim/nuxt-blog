@@ -12,7 +12,7 @@
                   color="orange"
                   height="30px"
                   :to="'/category/' + post.fields.category.fields.slug"
-                  style="margin-left: 30px"
+                  style="margin-left: 20px"
                 >{{post.fields.category.fields.title}}</v-btn>
               </p>
               <h1>{{ post.fields.title }}</h1>
@@ -127,7 +127,7 @@ export default {
 .post h1 {
   border-bottom: solid 3px #cce4ff;
   position: relative;
-  margin: 20px 10px 0 10px;
+  margin: 25px 2% 0 2%;
 }
 
 .post h1:after {
@@ -144,7 +144,7 @@ export default {
   color: #494949; /*文字色*/
   background: #cce4ff; /*背景色*/
   border-left: solid 5px #5472cd; /*左線（実線 太さ 色）*/
-  margin: 20px 0 20px 0;
+  margin: 20px 5px 20px 5px;
 }
 
 .post h3 {
@@ -155,22 +155,23 @@ export default {
 }
 
 .post p {
-  margin: 10px 1rem 0 1rem;
+  margin: 15px 1rem 0 1rem;
 }
 
 .post .author {
   text-align: right;
-  margin-top: 7px;
+  margin: 12px 12px;
   color: #5472cd;
   font-size: 13pt;
 }
 
 .post .content {
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 .post .content p {
-  margin: 15px 5%;
+  margin: 25px 4%;
   font-size: 13pt;
+  line-height: 1.5em;
 }
 </style>
