@@ -140,7 +140,7 @@ export default {
 }
 
 .post h2 {
-  padding: 0.5em; /*文字周りの余白*/
+  padding: 0.6em; /*文字周りの余白*/
   color: #494949; /*文字色*/
   background: #cce4ff; /*背景色*/
   border-left: solid 5px #5472cd; /*左線（実線 太さ 色）*/
@@ -173,5 +173,18 @@ export default {
   margin: 25px 4%;
   font-size: 13pt;
   line-height: 1.5em;
+}
+
+.post .content img {
+  width: 80%;
+  display: block;
+  margin: auto;
+}
+
+.post .content blockquote {
+  border-left: solid 3px #bdbdbd; /*左線（実線 太さ 色）*/
+  margin: 0 5%;
+  background-color: #f5f5f5;
+  line-height: 1em;
 }
 </style>
