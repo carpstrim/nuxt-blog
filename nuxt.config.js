@@ -10,8 +10,8 @@ export default {
   ** Headers of the page
   */
   head: {
-    titleTemplate: '%s - ' +  'COLOR PALETTE',
-    title: 'COLOR PALETTE',
+    titleTemplate: '%s - ' + 'のーど Inc',
+    title: 'のーど Inc',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -21,7 +21,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
     ],
     script: [
-      { src: "https://platform.twitter.com/widgets.js", type: 'text/javascript'}
+      { src: "https://platform.twitter.com/widgets.js", type: 'text/javascript' }
     ]
   },
   /*
@@ -92,7 +92,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
     }
   },
   markdownit: {
@@ -109,7 +109,7 @@ export default {
         .then(entries => {
           return entries.items.map(entry => {
             return {
-              route: "/posts/"+entry.fields.slug + "/",
+              route: "/posts/" + entry.fields.slug + "/",
               payload: entry
             }
           })
@@ -120,12 +120,12 @@ export default {
     hostname: 'https://color-in-k.com',
     routes() {
       return client
-      .getEntries({ content_type: 'post' })
-      .then(entries => {
-        return entries.items.map(entry => {
-          return "/posts/" + entry.fields.slug + "/"
+        .getEntries({ content_type: 'post' })
+        .then(entries => {
+          return entries.items.map(entry => {
+            return "/posts/" + entry.fields.slug + "/"
+          })
         })
-      })
     }
   },
   env: {

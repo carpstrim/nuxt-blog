@@ -81,7 +81,7 @@ export default {
         {
           hid: "og:site_name",
           property: "og:site_name",
-          content: this.post.fields.title + " - COLOR PALETTE"
+          content: this.post.fields.title + " - のーど Inc"
         },
         { hid: "og:type", property: "og:type", content: "article" },
         {
