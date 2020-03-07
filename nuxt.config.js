@@ -57,7 +57,15 @@ export default {
     '@nuxtjs/sitemap',
     ['@nuxtjs/google-analytics', {
       id: 'UA-157474508-1'
-    }]
+    }],
+    [
+      "@nuxtjs/google-adsense",
+      {
+        id: "ca-pub-6334332538554348",  // Google AdSense クライアントID（必須）
+        analyticsUacct: "UA-157474508-1",  // analyticsアカウントID（オプション）
+        //analyticsDomainName: "knote.life"  // analyticsアカウントドメイン（オプション）
+      }
+    ]
   ],
   /*
   ** Axios module configuration
