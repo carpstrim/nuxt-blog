@@ -26,19 +26,37 @@
           <p>のーど</p>
           <span>フリーランス Webプログラマー</span>
           <br />
-          <v-btn color="primary" href="https://twitter.com/node_mental" small icon outlined>
+          <v-btn
+            color="primary"
+            href="https://twitter.com/node_mental"
+            target="_blank"
+            rel="noopener noreferrer"
+            small
+            icon
+            outlined
+          >
             <v-icon>mdi-twitter</v-icon>
           </v-btn>
           <v-btn
             color="red"
             href="https://www.youtube.com/channel/UCn2ebguspaJP5iJ8YWwpI1A"
+            target="_blank"
+            rel="noopener noreferrer"
             small
             icon
             outlined
           >
             <v-icon>mdi-youtube</v-icon>
           </v-btn>
-          <v-btn color="green" href="https://lin.ee/80IgBws" small outlined icon>
+          <v-btn
+            color="green"
+            href="https://lin.ee/80IgBws"
+            target="_blank"
+            rel="noopener noreferrer"
+            small
+            outlined
+            icon
+          >
             <v-icon>mdi-chat</v-icon>
           </v-btn>
         </div>
@@ -52,7 +70,7 @@
                       <span>ひとことプロフィール</span><br>
                       <v-btn
                       color="primary"
-                      href="https://twitter.com/oni3ume"
+                      href="https://twitter.com/oni3ume" target="_blank" rel="noopener noreferrer"
                       small
                       icon
                       outlined

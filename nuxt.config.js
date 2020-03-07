@@ -37,7 +37,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/contentful'
+    '~/plugins/contentful',
+    '~/plugins/markdownit',
   ],
   /*
   ** Nuxt.js dev-modules
@@ -95,13 +96,13 @@ export default {
     extend(config, ctx) {
     }
   },
-  markdownit: {
+  /*markdownit: {
     injected: true,
     breaks: true,
     html: true,
     linkify: true,
     typography: true,
-  },
+  },*/
   generate: {
     routes() {
       return client
