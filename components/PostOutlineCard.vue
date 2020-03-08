@@ -5,28 +5,28 @@
         <v-flex xs12 sm4>
           <v-img　
             class="ma-1 ml-3 mr-3 mb-2"
-            :src="fields.image.fields.file.url"
+            :src="post.fields.image.fields.file.url"
             aspect-ratio="1.3"
-            @click="$router.push(`/posts/${fields.slug}/`)"
+            @click="$router.push(`/posts/${post.fields.slug}/`)"
             style="cursor: pointer"
           />
         </v-flex>
         <v-flex xs12 sm8>
           <div class="mt-1 ml-2 mb-1">
-            <span>{{ formatDate(fields.createdAt) }}</span>
+            <span>{{ formatDate(post.fields.createdAt) }}</span>
             <v-btn
               outlined
               color="orange"
               height="25px"
-              :to="'/category/' + fields.category.fields.slug"
+              :to="'/category/' + post.fields.category.fields.slug"
               style="margin-left: 20px"
-            >{{fields.category.fields.title}}</v-btn>
+            >{{post.fields.category.fields.title}}</v-btn>
           </div>
-          <nuxt-link :to="'/posts/'+fields.slug + '/'" style="text-decoration: none">
-            <h2 class="mr-2 ml-2 pb-1">{{ fields.title }}</h2>
+          <nuxt-link :to="'/posts/'+post.fields.slug + '/'" style="text-decoration: none">
+            <h2 class="mr-2 ml-2 pb-1">{{ post.fields.title }}</h2>
           </nuxt-link>
           <v-card flat tile class="mr-1 ml-1">
-            <v-card-text>{{fields.outline}}</v-card-text>
+            <v-card-text>{{post.fields.outline}}</v-card-text>
           </v-card>
         </v-flex>
       </v-layout>
@@ -34,7 +34,7 @@
         outlined
         tile
         color="#EEEEEE"
-        :to="'/posts/' + fields.slug + '/'"
+        :to="'/posts/' + post.fields.slug + '/'"
         style="text-align: center; padding: 10px 0"
       >
         <span style="font-size: 10pt; color: #424242;">この記事を読む</span>
@@ -54,9 +54,6 @@ export default {
       type: String,
       default: null
     }
-  },
-  created() {
-    this.fields = this.post.fields;
   },
   methods: {
     formatDate(iso) {

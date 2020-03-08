@@ -1,12 +1,25 @@
 <template>
   <v-container style="max-width: 1200px">
     <v-layout row wrap>
-      <v-flex xs12 sm8 class="mb-1">
+      <v-flex xs12 sm8 class="mb-5">
         <div v-for="(post, index) in posts" :key="index">
           <post-outline-card :post="post" />
         </div>
-        <v-layout v-if="posts.length === 10" row wrap justify-end class="ma-7">
-          <v-btn to="/page/2" color="secondary" large outlined>次ページ ＞</v-btn>
+        <v-layout row wrap justify-space-between class="ma-7">
+          <v-btn
+            v-if="this.posts.length > 0"
+            :to="'/page/' + (page*1 - 1)"
+            color="secondary"
+            large
+            outlined
+          >＜ 前ページ</v-btn>
+          <v-btn
+            v-if="this.posts.length === 10"
+            :to="'/page/' + (page*1 + 1)"
+            color="secondary"
+            large
+            outlined
+          >次ページ ＞</v-btn>
         </v-layout>
       </v-flex>
       <v-flex xs12 sm4>
@@ -19,6 +32,7 @@
         <adsbygoogle ad-slot="7918916412" style="margin: 0 25px" />
       </v-flex>
     </v-layout>
+    <!-- this.posts.lenghtをトリガーにして、次ページへのボタンを作成-->
   </v-container>
 </template>
 
@@ -29,13 +43,14 @@ import Profile from "@/components/Profile";
 import PostOutlineCard from "@/components/PostOutlineCard";
 
 export default {
-  async asyncData({ params }) {
+  async asyncData({ params, error, payload }) {
+    const page = params.page;
     const posts = await client
       .getEntries({
         content_type: "post",
         order: "-fields.createdAt",
-        limit: 10
-        //skip: maxEntry * (page - 1)
+        limit: 10,
+        skip: 10 * (page * 1 - 1)
       })
       .then(entries => {
         return entries.items;
@@ -51,25 +66,29 @@ export default {
         });
       });
 
-    return { posts, categories };
+    return { posts, categories, page };
   },
   mounted() {
     console.log({ post: this.posts });
     console.log({ categories: this.categories });
     console.log({ postNum: this.posts.length });
+    console.log({ pageNum: this.page * 1 });
+    if (this.page * 1 === 1) {
+      this.$router.push("/");
+    }
   },
   head: {
-    title: "ホーム",
+    title: "page",
     meta: [
       {
         hid: "description",
         name: "description",
-        content: "自分の色を作るブログ"
+        content: "記事一覧"
       },
       {
         hid: "og:site_name",
         property: "og:site_name",
-        content: "TOP - のーど Inc"
+        content: "記事一覧 - のーど Inc"
       },
       { hid: "og:type", property: "og:type", content: "website" },
       { hid: "og:url", property: "og:url", content: "https://color-in-k.com/" },
@@ -77,7 +96,7 @@ export default {
       {
         hid: "og:description",
         property: "og:description",
-        content: "自分の色を作るブログ"
+        content: "記事一覧"
       },
       //{ hid: 'og:image', property: 'og:image', content: topImg },
       {
