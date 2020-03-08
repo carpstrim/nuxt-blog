@@ -13,8 +13,10 @@
         <article>
           <category-list :categories="categories" class="mt-10 mb-10" style="margin: 0 25px" />
         </article>
+        <adsbygoogle ad-slot="7918916412" />
       </v-flex>
     </v-layout>
+    <!-- this.posts.lenghtをトリガーにして、次ページへのボタンを作成-->
   </v-container>
 </template>
 
@@ -29,10 +31,12 @@ export default {
     const posts = await client
       .getEntries({
         content_type: "post",
-        order: "-fields.createdAt"
+        order: "-fields.createdAt",
+        limit: 10
+        //skip: maxEntry * (page - 1)
       })
       .then(entries => {
-        return entries.items.slice(0, 10);
+        return entries.items;
       });
     const categories = await client
       .getEntries({
@@ -50,6 +54,7 @@ export default {
   mounted() {
     console.log({ post: this.posts });
     console.log({ categories: this.categories });
+    console.log({ postNum: this.posts.length });
   },
   head: {
     title: "ホーム",

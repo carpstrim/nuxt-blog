@@ -1,5 +1,5 @@
 <template>
-  <v-card flat tile class="mb-5 mr-2 ml-2">
+  <v-card flat tile class="mb-5 mr-3 ml-3">
     <v-container class="post-outline">
       <v-layout row wrap>
         <v-flex xs12 sm4>
@@ -23,7 +23,7 @@
             >{{fields.category.fields.title}}</v-btn>
           </div>
           <nuxt-link :to="'/posts/'+fields.slug + '/'" style="text-decoration: none">
-            <h2 class="mr-1 ml-1 pb-1">{{ fields.title }}</h2>
+            <h2 class="mr-2 ml-2 pb-1">{{ fields.title }}</h2>
           </nuxt-link>
           <v-card flat tile class="mr-1 ml-1">
             <v-card-text>{{fields.outline}}</v-card-text>
