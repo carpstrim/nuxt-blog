@@ -6,19 +6,19 @@
           <article class="post">
             <v-container style="white-space: pre-line; word-break: break-all;">
               <p class="date">
-                <span>{{ formatDate(post.fields.createdAt) }}</span>
+                <span>{{ formatDate(post.createdAt) }}</span>
                 <v-btn
                   outlined
                   color="orange"
                   height="30px"
-                  :to="'/category/' + post.fields.category.fields.slug"
+                  :to="'/category/' + post.category.fields.slug"
                   style="margin-left: 20px"
-                >{{post.fields.category.fields.title}}</v-btn>
+                >{{post.category.fields.title}}</v-btn>
               </p>
-              <h1>{{ post.fields.title }}</h1>
-              <p class="author">Writer： {{post.fields.author.fields.name}}</p>
-              <v-img　 class="ma-2" :src="post.fields.image.fields.file.url" aspect-ratio="1.77" />
-              <div class="content" v-html="$md.render(post.fields.content)"></div>
+              <h1>{{ post.title }}</h1>
+              <p class="author">Writer： {{post.author.fields.name}}</p>
+              <v-img　 class="ma-2" :src="post.image.fields.file.url" aspect-ratio="1.77" />
+              <div class="content" v-html="$md.render(post.content)"></div>
             </v-container>
           </article>
         </v-card>
@@ -54,7 +54,7 @@ export default {
         "fields.slug": params.slug
       })
       .then(entries => {
-        return entries.items[0];
+        return entries.items[0].fields;
       });
     const categories = await client
       .getEntries({
@@ -71,35 +71,35 @@ export default {
   },
   head() {
     return {
-      title: this.post.fields.title,
+      title: this.post.title,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: this.post.fields.outline
+          content: this.post.outline
         },
         {
           hid: "og:site_name",
           property: "og:site_name",
-          content: this.post.fields.title + " - のーど Inc"
+          content: this.post.title + " - のーど Inc"
         },
         { hid: "og:type", property: "og:type", content: "article" },
         {
           hid: "og:url",
           property: "og:url",
-          content: "https://color-in-k.com/posts/" + this.post.fields.slug
+          content: "https://color-in-k.com/posts/" + this.post.slug
         },
         {
           hid: "og:title",
           property: "og:title",
-          content: this.post.fields.title
+          content: this.post.title
         },
         {
           hid: "og:description",
           property: "og:description",
-          content: this.post.fields.outline
+          content: this.post.outline
         },
-        //{ hid: 'og:image', property: 'og:image', content: this.post.fields.image.fields.file.url },
+        //{ hid: 'og:image', property: 'og:image', content: this.post.image.fields.file.url },
         { hid: "twitter:card", name: "twitter:card", content: "summary" },
         { hid: "twitter:site", name: "twitter:site", content: "@node_mental" }
       ]
