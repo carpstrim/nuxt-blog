@@ -2,7 +2,7 @@
   <v-container style="max-width: 1200px">
     <v-layout row wrap>
       <v-flex xs12 sm8>
-        <v-card flat tile class="mb-2 mr-3 ml-3">
+        <v-card flat tile class="mb-7 mr-3 ml-3">
           <article class="post">
             <v-container style="white-space: pre-line; word-break: break-all;">
               <p class="date">
@@ -145,7 +145,7 @@ export default {
   color: #494949; /*文字色*/
   background: #cce4ff; /*背景色*/
   border-left: solid 5px #5472cd; /*左線（実線 太さ 色）*/
-  margin: 20px 5px 20px 5px;
+  margin: 20px 0 20px 0;
 }
 
 .post h3 {
@@ -171,8 +171,8 @@ export default {
 }
 
 .post .content p {
-  margin: 25px 4%;
-  font-size: 13pt;
+  margin: 20px 4%;
+  font-size: 1em;
   line-height: 1.5em;
 }
 
