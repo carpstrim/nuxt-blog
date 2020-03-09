@@ -22,6 +22,7 @@
 </template>
 
 <script>
+//_subcategory作る可能性を考慮したディレクトリ構造
 import client from "~/plugins/contentful";
 import CategoryList from "@/components/CategoryList";
 import Profile from "@/components/Profile";
