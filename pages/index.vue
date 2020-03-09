@@ -5,7 +5,7 @@
         <div v-for="(post, index) in posts" :key="index">
           <post-outline-card :post="post" />
         </div>
-        <v-layout v-if="posts.length === 10" row wrap justify-end class="ma-7">
+        <v-layout v-if="length === 11" row wrap justify-end class="ma-7">
           <v-btn to="/page/2" color="secondary" large outlined>次ページ ＞</v-btn>
         </v-layout>
       </v-flex>
@@ -34,7 +34,7 @@ export default {
       .getEntries({
         content_type: "post",
         order: "-fields.createdAt",
-        limit: 10
+        limit: 10 + 1
         //skip: maxEntry * (page - 1)
       })
       .then(entries => {
@@ -56,7 +56,11 @@ export default {
   mounted() {
     console.log({ post: this.posts });
     console.log({ categories: this.categories });
-    console.log({ postNum: this.posts.length });
+  },
+  created() {
+    this.length = this.posts.length;
+    console.log(this.length);
+    this.posts = this.posts.slice(0, 10);
   },
   head: {
     title: "ホーム",

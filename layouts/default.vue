@@ -39,11 +39,17 @@
 
             <v-card-actions>
               <v-layout row wrap justify-space-around>
-                <v-btn color="primary" text to="/#header">home</v-btn>
+                <v-btn color="primary" text to="/#header">
+                  <v-icon class="mr-2">mdi-home</v-icon>Home
+                </v-btn>
 
-                <v-btn color="primary" text to="/profile/">Profile</v-btn>
+                <v-btn color="primary" text to="/profile/">
+                  <v-icon class="mr-2">mdi-account</v-icon>Profile
+                </v-btn>
 
-                <v-btn color="primary" text to="/contact/">Contact</v-btn>
+                <v-btn color="primary" text to="/contact/">
+                  <v-icon class="mr-2">mdi-forum</v-icon>Contact
+                </v-btn>
               </v-layout>
             </v-card-actions>
           </v-card>

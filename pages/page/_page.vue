@@ -7,14 +7,14 @@
         </div>
         <v-layout row wrap justify-space-between class="ma-7">
           <v-btn
-            v-if="this.posts.length > 0"
+            v-if="length > 0"
             :to="'/page/' + (page*1 - 1)"
             color="secondary"
             large
             outlined
           >＜ 前ページ</v-btn>
           <v-btn
-            v-if="this.posts.length === 10"
+            v-if="length === 11"
             :to="'/page/' + (page*1 + 1)"
             color="secondary"
             large
@@ -49,7 +49,7 @@ export default {
       .getEntries({
         content_type: "post",
         order: "-fields.createdAt",
-        limit: 10,
+        limit: 10 + 1,
         skip: 10 * (page * 1 - 1)
       })
       .then(entries => {
@@ -71,11 +71,15 @@ export default {
   mounted() {
     console.log({ post: this.posts });
     console.log({ categories: this.categories });
-    console.log({ postNum: this.posts.length });
     console.log({ pageNum: this.page * 1 });
     if (this.page * 1 === 1) {
       this.$router.push("/");
     }
+  },
+  created() {
+    this.length = this.posts.length;
+    console.log(this.length);
+    this.posts = this.posts.slice(0, 10);
   },
   head: {
     title: "page",
