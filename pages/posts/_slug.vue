@@ -17,7 +17,7 @@
               </p>
               <h1>{{ post.title }}</h1>
               <p class="author">Writer： {{post.author.fields.name}}</p>
-              <v-img　 class="ma-2" :src="post.image.fields.file.url" aspect-ratio="1.77" />
+              <v-img　 class="ma-3" :src="post.image.fields.file.url" aspect-ratio="1.77" />
               <div class="content" v-html="$md.render(post.content)"></div>
             </v-container>
           </article>
@@ -31,7 +31,7 @@
         <article>
           <category-list :categories="categories" class="mt-10 mb-5" style="margin: 0 25px" />
         </article>
-        <!--<adsbygoogle ad-slot="7918916412" style="margin: 0 25px" />-->
+        <adsbygoogle ad-slot="7918916412" style="margin: 0 25px" />
       </v-flex>
     </v-layout>
   </v-container>
