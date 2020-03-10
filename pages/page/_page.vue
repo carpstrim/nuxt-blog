@@ -29,7 +29,9 @@
         <article>
           <category-list :categories="categories" class="mt-10 mb-10" style="margin: 0 25px" />
         </article>
-        <adsbygoogle ad-slot="7918916412" style="margin: 0 25px" />
+        <v-card>
+          <adsbygoogle ad-slot="7918916412" style="margin: 0 25px" />
+        </v-card>
       </v-flex>
     </v-layout>
     <!-- this.posts.lenghtをトリガーにして、次ページへのボタンを作成-->
