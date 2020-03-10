@@ -19,6 +19,10 @@
               <p class="author">Writer： {{post.author.fields.name}}</p>
               <v-img　 class="ma-3" :src="post.image.fields.file.url" aspect-ratio="1.77" />
               <div class="content" v-html="$md.render(post.content)"></div>
+              <v-layout column wrap align-center>
+                <span class="mb-2" style="color: #505050">Sponsored Link</span>
+                <adsbygoogle ad-slot="2931217575" />
+              </v-layout>
             </v-container>
           </article>
         </v-card>
@@ -167,7 +171,7 @@ export default {
 }
 
 .post .content {
-  margin-top: 50px;
+  margin: 50px 0;
 }
 
 .post .content p {
