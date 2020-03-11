@@ -55,6 +55,8 @@
                 class="ml-5"
                 large
                 outlined
+                target="_blank"
+                rel="noopener noreferrer"
                 color="#00acee"
                 :href="'http://twiter.com/share?url=https://color-in-k.com/posts/' + post.slug + '&via=node_mental&text=' + post.title"
               >
@@ -64,6 +66,8 @@
                 class="ml-2"
                 large
                 outlined
+                target="_blank"
+                rel="noopener noreferrer"
                 color="#4267B2"
                 :href="'https://www.facebook.com/share.php?u=https://color-in-k.com/posts/' + post.slug"
               >
