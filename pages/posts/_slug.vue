@@ -23,6 +23,54 @@
               <adsbygoogle ad-slot="2931217575" style="margin: 0 auto" />-->
             </v-container>
           </article>
+          <v-container>
+            <div class="mb-7" style="padding: 0 7%" v-if="post.relatedPost">
+              <h2 class="ml-2">関連記事</h2>
+              <v-divider />
+              <v-container v-for="p in post.relatedPost" :key="p.fields.slug">
+                <v-card :to="'/posts/' + p.fields.slug" tile outlined color="#ECEFF1">
+                  <v-layout class="ma-3" row wrap>
+                    <v-flex xs2>
+                      <v-img aspect-ratio="1" :src="p.fields.image.fields.file.url" />
+                    </v-flex>
+                    <v-flex xs10>
+                      <div class="ml-4">
+                        <span style="font-size: 10pt">{{p.fields.createdAt}}</span>
+                        <p style="font-weight: bold">{{p.fields.title}}</p>
+                      </div>
+                    </v-flex>
+                  </v-layout>
+                </v-card>
+              </v-container>
+            </div>
+            <v-flex xs12 class="mb-2 ml-3">
+              <v-btn text x-large color="orange" :to="'/category/' + post.category.fields.slug">
+                <v-icon class="mr-2" color="orange">mdi-tag</v-icon>
+                {{post.category.fields.title}}
+              </v-btn>
+            </v-flex>
+
+            <v-flex xs12 class="mb-5">
+              <v-btn
+                class="ml-5"
+                large
+                outlined
+                color="#00acee"
+                :href="'https://twiter.com/share?url=https://color-in-k.com/posts/' + post.slug + '&via=@node_mental&text=' + post.title"
+              >
+                <v-icon>mdi-twitter</v-icon>ツイート
+              </v-btn>
+              <v-btn
+                class="ml-2"
+                large
+                outlined
+                color="#4267B2"
+                :href="'http://www.facebook.com/share.php?u=https://color-in-k.com/posts/' + post.slug"
+              >
+                <v-icon>mdi-facebook</v-icon>シェア
+              </v-btn>
+            </v-flex>
+          </v-container>
         </v-card>
       </v-flex>
 
