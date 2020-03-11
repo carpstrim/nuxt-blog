@@ -58,7 +58,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 color="#00acee"
-                :href="'https://twiter.com/share?url=https://color-in-k.com/posts/' + post.slug + '&via=node_mental&text=' + post.title"
+                :href="'http://twiter.com/share?url=https://color-in-k.com/posts/' + post.slug + '&via=node_mental&text=' + post.title"
               >
                 <v-icon>mdi-twitter</v-icon>ツイート
               </v-btn>
