@@ -56,7 +56,7 @@
                 large
                 outlined
                 color="#00acee"
-                :href="'https://twiter.com/share?url=https://color-in-k.com/posts/' + post.slug + '&via=@node_mental&text=' + post.title"
+                :href="'http://twiter.com/share?url=https://color-in-k.com/posts/' + post.slug + '&via=@node_mental&text=' + post.title"
               >
                 <v-icon>mdi-twitter</v-icon>ツイート
               </v-btn>
@@ -65,7 +65,7 @@
                 large
                 outlined
                 color="#4267B2"
-                :href="'http://www.facebook.com/share.php?u=https://color-in-k.com/posts/' + post.slug"
+                :href="'https://www.facebook.com/share.php?u=https://color-in-k.com/posts/' + post.slug"
               >
                 <v-icon>mdi-facebook</v-icon>シェア
               </v-btn>
