@@ -16,9 +16,7 @@
         <article>
           <category-list :categories="categories" class="mt-10 mb-10" style="margin: 0 25px" />
         </article>
-        <div style="text-align:center">
-          <adsbygoogle ad-slot="7918916412" style="width: 300px" />
-        </div>
+        <adsbygoogle ad-slot="7918916412" style="width: 300px; margin: 0 auto" />
       </v-flex>
     </v-layout>
   </v-container>
