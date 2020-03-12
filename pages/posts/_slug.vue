@@ -19,8 +19,8 @@
               <p class="author">Writer： {{post.author.fields.name}}</p>
               <v-img　 class="ma-3" :src="post.image.fields.file.url" aspect-ratio="1.77" />
               <div class="content" v-html="$md.render(post.content)"></div>
-              <!--<span class="mb-2" style="color: #505050; margin: 0 auto">Sponsored Link</span>
-              <adsbygoogle ad-slot="2931217575" style="margin: 0 auto" />-->
+              <span class="mb-2" style="color: #505050; margin: 0 auto">Sponsored Link</span>
+              <adsbygoogle ad-slot="2931217575" style="width: 300px; margin: 0 auto" />
             </v-container>
           </article>
           <v-container>
@@ -83,7 +83,7 @@
         <article>
           <category-list :categories="categories" class="mt-10 mb-5" style="margin: 0 25px" />
         </article>
-        <!--<adsbygoogle ad-slot="7918916412" style="margin: 0 25px" />-->
+        <adsbygoogle ad-slot="7918916412" style="width: 300px; margin: 0 auto" />
       </v-flex>
     </v-layout>
   </v-container>
