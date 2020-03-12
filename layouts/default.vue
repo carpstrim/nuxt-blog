@@ -109,11 +109,11 @@
 </template>
 
 <script>
-import topImg from "@/static/top.jpg";
 export default {
   data() {
     return {
-      topImg,
+      topImg:
+        "https://lh3.googleusercontent.com/u_t50jA6V7Rt0XVcVbbDvU5qSB2mrzOgpdjpBsOwAzBmSdaM4CBmAkKgu2C7Ffji-bYXyi_QEmm6Z4Sdv7jZPlHmVOCilLw_sNNT7wDdol6_pXXdWjWuvJMeUEgALG8F8haGln5ytg=w2400",
       clipped: false,
       drawer: false,
       items: [
