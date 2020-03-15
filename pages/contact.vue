@@ -27,7 +27,7 @@
                 </p>
               </div>
 
-              <form name="contact" method="POST" data-netlify="true" action="thank-you">
+              <form name="contact" method="POST" data-netlify="true" action="/thank-you">
                 <div class="cp_iptxt">
                   <input type="hidden" name="form-name" value="contact" />
                   <p class="mb-10">
@@ -63,7 +63,7 @@
           <profile style="margin: 0 25px" />
         </article>
         <article>
-          <category-list :categories="categories" class="mt-10 mb-5" style="margin: 0 25px" />
+          <category-list class="mt-10 mb-5" style="margin: 0 25px" />
         </article>
       </v-flex>
     </v-layout>
@@ -77,23 +77,7 @@ import Profile from "@/components/Profile";
 import CategoryCard from "@/components/CategoryCard";
 
 export default {
-  async asyncData({ params }) {
-    const categories = await client
-      .getEntries({
-        content_type: "category",
-        order: "fields.index"
-      })
-      .then(entries => {
-        return entries.items.map(e => {
-          return e.fields;
-        });
-      });
-
-    return { categories };
-  },
-  mounted() {
-    console.log({ categories: this.categories });
-  },
+  mounted() {},
   head: {
     title: "お問い合わせ"
   },

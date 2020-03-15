@@ -64,7 +64,7 @@
     </v-row>
     <v-divider />
     <!--<v-row no-gutters>
-                    <v-col cols="8" class="oni-profile">
+                    <v-col cols="8" class="node-profile">
                       <div style="margin: 10px 10px 0 10px">
                       <p>焼きおにぎり</p>
                       <span>ひとことプロフィール</span><br>
@@ -118,16 +118,6 @@ export default {
 }
 
 .node-profile span {
-  font-size: 9pt;
-}
-
-.oni-profile p {
-  color: #ef6c00;
-  position: relative;
-  margin: 5px 0 0 0;
-}
-
-.oni-profile span {
   font-size: 9pt;
 }
 </style>

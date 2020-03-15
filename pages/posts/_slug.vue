@@ -19,7 +19,7 @@
               <p class="author">Writer： {{post.author.fields.name}}</p>
               <v-img　 class="ma-3" :src="post.image.fields.file.url" aspect-ratio="1.77" />
               <div class="content" v-html="$md.render(post.content)"></div>
-              <div style="text-align:center">
+              <div style="text-align:center; margin: 0 0 15px 0">
                 <span class="mb-2" style="color: #505050;">Sponsored Link</span>
                 <adsbygoogle
                   ad-slot="7918916412"
@@ -87,7 +87,7 @@
           <profile style="margin: 0 25px" />
         </article>
         <article>
-          <category-list :categories="categories" class="mt-10 mb-5" style="margin: 0 25px" />
+          <category-list class="mt-10 mb-5" style="margin: 0 25px" />
         </article>
         <adsbygoogle ad-slot="7918916412" style="width: 300px; margin: 0 auto" />
       </v-flex>
@@ -115,18 +115,8 @@ export default {
       .then(entries => {
         return entries.items[0].fields;
       });
-    const categories = await client
-      .getEntries({
-        content_type: "category",
-        order: "fields.index"
-      })
-      .then(entries => {
-        return entries.items.map(e => {
-          return e.fields;
-        });
-      });
 
-    return { post, categories };
+    return { post };
   },
   head() {
     return {
@@ -165,7 +155,7 @@ export default {
     };
   },
   mounted() {
-    console.log({ post: this.post, categories: this.categories });
+    console.log({ post: this.post });
   },
   data() {
     return {};

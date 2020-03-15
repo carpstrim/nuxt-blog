@@ -14,7 +14,7 @@
           <profile style="margin: 0 25px" />
         </article>
         <article>
-          <category-list :categories="categories" class="mt-10 mb-10" style="margin: 0 25px" />
+          <category-list class="mt-10 mb-10" style="margin: 0 25px" />
         </article>
         <adsbygoogle ad-slot="7918916412" style="width: 300px; margin: 0 auto" />
       </v-flex>
@@ -40,22 +40,11 @@ export default {
       .then(entries => {
         return entries.items;
       });
-    const categories = await client
-      .getEntries({
-        content_type: "category",
-        order: "fields.index"
-      })
-      .then(entries => {
-        return entries.items.map(e => {
-          return e.fields;
-        });
-      });
 
-    return { posts, categories };
+    return { posts };
   },
   mounted() {
     console.log({ post: this.posts });
-    console.log({ categories: this.categories });
   },
   created() {
     this.length = this.posts.length;

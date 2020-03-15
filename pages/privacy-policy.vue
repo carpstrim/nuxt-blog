@@ -20,7 +20,7 @@
           <profile style="margin: 0 25px" />
         </article>
         <article>
-          <category-list :categories="categories" class="mt-10 mb-5" style="margin: 0 25px" />
+          <category-list class="mt-10 mb-5" style="margin: 0 25px" />
         </article>
       </v-flex>
     </v-layout>
@@ -46,18 +46,8 @@ export default {
       .then(entries => {
         return entries.items[0];
       });
-    const categories = await client
-      .getEntries({
-        content_type: "category",
-        order: "fields.index"
-      })
-      .then(entries => {
-        return entries.items.map(e => {
-          return e.fields;
-        });
-      });
 
-    return { post, categories };
+    return { post };
   },
   head() {
     return {
@@ -65,7 +55,7 @@ export default {
     };
   },
   mounted() {
-    console.log({ post: this.post, categories: this.categories });
+    console.log({ post: this.post });
   },
   data() {
     return {};

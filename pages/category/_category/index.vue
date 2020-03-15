@@ -14,7 +14,7 @@
           <profile style="margin: 0 25px" />
         </article>
         <article>
-          <category-list :categories="categories" class="mt-10 mb-10" style="margin: 0 25px" />
+          <category-list class="mt-10 mb-10" style="margin: 0 25px" />
         </article>
       </v-flex>
     </v-layout>
