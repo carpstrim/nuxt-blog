@@ -9,7 +9,7 @@
                 <span>{{ formatDate(post.createdAt) }}</span>
                 <v-btn
                   outlined
-                  color="orange"
+                  color="orange darken-4"
                   height="30px"
                   :to="'/category/' + post.category.fields.slug"
                   style="margin-left: 20px"
@@ -50,8 +50,13 @@
               </v-container>
             </div>
             <v-flex xs12 class="mb-2 ml-3">
-              <v-btn text x-large color="orange" :to="'/category/' + post.category.fields.slug">
-                <v-icon class="mr-2" color="orange">mdi-tag</v-icon>
+              <v-btn
+                text
+                x-large
+                color="orange darken-4"
+                :to="'/category/' + post.category.fields.slug"
+              >
+                <v-icon class="mr-2" color="orange darken-4">mdi-tag</v-icon>
                 {{post.category.fields.title}}
               </v-btn>
             </v-flex>
@@ -230,9 +235,6 @@ export default {
   width: 80%;
   display: block;
   margin: auto;
-}
-
-.post .content a img {
 }
 
 .post .content blockquote {

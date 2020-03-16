@@ -15,7 +15,7 @@
           <v-divider />
           <v-list-item :to="'/category/' + item.slug">
             <v-list-item-icon>
-              <v-icon :color="color || color" v-text="item.icon" style="margin-left: 20px"></v-icon>
+              <v-icon :color="color" v-text="item.icon" style="margin-left: 20px"></v-icon>
             </v-list-item-icon>
 
             <v-list-item-content>

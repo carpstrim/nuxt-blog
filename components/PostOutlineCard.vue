@@ -16,7 +16,7 @@
             <span>{{ formatDate(fields.createdAt) }}</span>
             <v-btn
               outlined
-              color="orange"
+              color="orange darken-4"
               height="25px"
               :to="'/category/' + fields.category.fields.slug"
               style="margin-left: 20px"
