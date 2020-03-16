@@ -61,6 +61,8 @@
                 class="ml-5"
                 large
                 outlined
+                target="_blank"
+                rel="noopener noreferrer"
                 color="#00acee"
                 :href="'http://twiter.com/share?url=https://color-in-k.com/posts/' + post.slug + '&via=node_mental&text=' + post.title"
               >
@@ -89,7 +91,7 @@
         <article>
           <category-list class="mt-10 mb-5" style="margin: 0 25px" />
         </article>
-        <adsbygoogle ad-slot="7918916412" style="width: 300px; margin: 0 auto" />
+        <adsbygoogle ad-slot="7918916412" style="width: 300px; margin: 25px auto" />
       </v-flex>
     </v-layout>
   </v-container>
@@ -228,6 +230,9 @@ export default {
   width: 80%;
   display: block;
   margin: auto;
+}
+
+.post .content a img {
 }
 
 .post .content blockquote {

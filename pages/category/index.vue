@@ -3,81 +3,76 @@
     <v-layout row wrap>
       <v-flex xs12 sm8>
         <div class="page-title">
-        <h1>カテゴリー</h1>
+          <h1>カテゴリー</h1>
         </div>
         <div v-for="(category, index) in categories" :key="index">
-            <v-container class="mb-5">
-            <category-card
-            :category="category"
-            width="80%"
-            />
-            </v-container>
+          <v-container class="mb-5">
+            <category-card :category="category" width="80%" />
+          </v-container>
         </div>
       </v-flex>
-        <v-flex xs12 sm4>
-            <article>
-              <profile class="mb-10" style="margin: 0 25px" />
-            </article>
-            <!--<article>
+      <v-flex xs12 sm4>
+        <article>
+          <profile class="mb-10" style="margin: 0 25px" />
+        </article>
+        <!--<article>
               <category-list
               :categories="categories"
               class="mt-10 mb-10"
               style="margin: 0 25px"
               />
-            </article>-->
-        </v-flex>
+        </article>-->
+        <adsbygoogle ad-slot="7918916412" style="width: 300px; margin: 25px auto" />
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
-import client from '~/plugins/contentful'
-import CategoryList from "@/components/CategoryList"
-import Profile from "@/components/Profile"
-import CategoryCard from "@/components/CategoryCard"
+import client from "~/plugins/contentful";
+import CategoryList from "@/components/CategoryList";
+import Profile from "@/components/Profile";
+import CategoryCard from "@/components/CategoryCard";
 
 export default {
-async asyncData({ params }) {
-    
+  async asyncData({ params }) {
     const categories = await client
       .getEntries({
-        content_type: 'category',
-        order: 'fields.index',
+        content_type: "category",
+        order: "fields.index"
       })
       .then(entries => {
-        return entries.items.map(e => { return e.fields})
-      })
-      
-      return {categories}
+        return entries.items.map(e => {
+          return e.fields;
+        });
+      });
+
+    return { categories };
   },
-  mounted(){
-    console.log({categories: this.categories})
+  mounted() {
+    console.log({ categories: this.categories });
   },
   head: {
-    title: 'カテゴリー',
+    title: "カテゴリー"
   },
   components: {
     CategoryList,
     Profile,
-    CategoryCard,
+    CategoryCard
   },
-  data(){
-    return {
-
-    }
+  data() {
+    return {};
   },
-  methods: {
-
-  }
-}
+  methods: {}
+};
 </script>
 
 <style>
-.page-title h1{
-    color: #424242;
-    font-size: 20pt;
-    position: relative;
-    margin: 10px 10px 30px 10px
+.page-title h1 {
+  color: #424242;
+  font-size: 20pt;
+  position: relative;
+  margin: 10px 10px 30px 10px;
 }
 
 .page-title h1:after {
@@ -88,5 +83,4 @@ async asyncData({ params }) {
   bottom: -3px;
   width: 30%;
 }
-
 </style>
