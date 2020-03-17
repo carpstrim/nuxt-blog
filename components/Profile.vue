@@ -27,34 +27,37 @@
           <span>フリーランス Webプログラマー</span>
           <br />
           <v-btn
-            color="primary"
+            color="#00acee"
             href="https://twitter.com/node_mental"
             target="_blank"
             rel="noopener noreferrer"
-            small
             icon
-            outlined
           >
             <v-icon>mdi-twitter</v-icon>
           </v-btn>
           <v-btn
-            color="red"
+            color="#FF0000"
             href="https://www.youtube.com/channel/UCn2ebguspaJP5iJ8YWwpI1A"
             target="_blank"
             rel="noopener noreferrer"
-            small
             icon
-            outlined
           >
             <v-icon>mdi-youtube</v-icon>
           </v-btn>
           <v-btn
-            color="green"
+            color="#D93177"
+            href="https://www.instagram.com/node_mental/"
+            target="_blank"
+            rel="noopener noreferrer"
+            icon
+          >
+            <v-icon>mdi-instagram</v-icon>
+          </v-btn>
+          <v-btn
+            color="#00B900"
             href="https://lin.ee/80IgBws"
             target="_blank"
             rel="noopener noreferrer"
-            small
-            outlined
             icon
           >
             <v-icon>mdi-chat</v-icon>
@@ -64,30 +67,26 @@
     </v-row>
     <v-divider />
     <!--<v-row no-gutters>
-                    <v-col cols="8" class="node-profile">
-                      <div style="margin: 10px 10px 0 10px">
-                      <p>焼きおにぎり</p>
-                      <span>ひとことプロフィール</span><br>
-                      <v-btn
-                      color="primary"
-                      href="https://twitter.com/oni3ume" target="_blank" rel="noopener noreferrer"
-                      small
-                      icon
-                      outlined
-                      >
-                      <v-icon>mdi-twitter</v-icon>
-                      </v-btn>
-                      </div>
-                    </v-col>
-                    <v-col cols="4">
-                      <v-img
-                        class="pa-2"
-                        :src="oni"
-                        aspect-ratio="1"
-                      >
-                      </v-img>
-                    </v-col>
-                  </v-row>
+      <v-col cols="8" class="node-profile">
+        <div style="margin: 10px 10px 0 10px">
+          <p>焼きおにぎり</p>
+          <span>ひとことプロフィール</span>
+          <br />
+          <v-btn
+            color="#00acee"
+            href="https://twitter.com/oni3ume"
+            target="_blank"
+            rel="noopener noreferrer"
+            icon
+          >
+            <v-icon>mdi-twitter</v-icon>
+          </v-btn>
+        </div>
+      </v-col>
+      <v-col cols="4">
+        <v-img class="pa-2" :src="oni" aspect-ratio="1"></v-img>
+      </v-col>
+    </v-row>
     <v-divider />-->
     <v-layout row wrap>
       <v-spacer />

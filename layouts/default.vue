@@ -118,7 +118,7 @@ export default {
       drawer: false,
       items: [
         {
-          icon: "mdi-apps",
+          icon: "mdi-home",
           title: "Home",
           to: "/"
         },
@@ -133,7 +133,7 @@ export default {
           to: "/category/"
         },
         {
-          icon: "mdi-email-send",
+          icon: "mdi-forum",
           title: "お問い合わせ",
           to: "/contact/"
         }
