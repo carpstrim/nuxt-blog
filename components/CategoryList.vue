@@ -56,7 +56,7 @@ export default {
         {
           title: "人間関係",
           slug: "human-relation",
-          icon: "mdi-chat-processing"
+          icon: "mdi-chat-processing-outline"
         },
         {
           title: "お仕事",
