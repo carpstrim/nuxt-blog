@@ -60,7 +60,7 @@
             rel="noopener noreferrer"
             icon
           >
-            <v-icon>mdi-chat</v-icon>
+            <v-icon>mdi-chat-outline</v-icon>
           </v-btn>
         </div>
       </v-col>

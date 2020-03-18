@@ -44,6 +44,11 @@ export default {
     return {
       categories: [
         {
+          title: "メンタル",
+          slug: "mental",
+          icon: "mdi-heart-outline"
+        },
+        {
           title: "考え方",
           slug: "thought",
           icon: "mdi-thought-bubble-outline"
