@@ -66,7 +66,7 @@ export default {
         {
           title: "ラジオ",
           slug: "radio",
-          icon: "mdi-microphone-settings"
+          icon: "mdi-microphone-outline"
         },
         {
           title: "プログラミング",
@@ -76,7 +76,7 @@ export default {
         {
           title: "日記・雑談",
           slug: "diary",
-          icon: "mdi-calendar-today"
+          icon: "mdi-book-outline"
         }
       ]
     };
