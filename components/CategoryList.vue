@@ -69,11 +69,6 @@ export default {
           icon: "mdi-microphone-settings"
         },
         {
-          title: "ライフスタイル",
-          slug: "lifestyle",
-          icon: "mdi-tea-outline"
-        },
-        {
           title: "プログラミング",
           slug: "programming",
           icon: "mdi-laptop-mac"
