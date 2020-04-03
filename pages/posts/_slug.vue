@@ -20,11 +20,11 @@
               <v-img　 class="ma-3" :src="post.image.fields.file.url" aspect-ratio="1.77" />
               <div class="content" v-html="$md.render(post.content)"></div>
               <div style="text-align:center; margin: 0 0 15px 0">
-                <adsbygoogle
+                <!--<adsbygoogle
                   ad-slot="7918916412"
                   ad-format
                   style="width: 300px; height: 120px; margin: 0 auto"
-                />
+                />-->
               </div>
             </v-container>
           </article>
