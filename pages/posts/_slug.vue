@@ -95,7 +95,7 @@
         <article>
           <category-list class="mt-10 mb-5" style="margin: 0 25px" />
         </article>
-        <adsbygoogle ad-slot="7918916412" style="width: 300px; margin: 25px auto" />
+        <!--<adsbygoogle ad-slot="7918916412" style="width: 300px; margin: 25px auto" />-->
       </v-flex>
     </v-layout>
   </v-container>
