@@ -22,8 +22,8 @@
               class="mb-1 mr-6"
             >{{fields.category.fields.title}}</v-btn>
             <v-flex xs12 sm5>
-              <v-icon small class="mb-1" color="#757575">mdi-pencil</v-icon>
-              <span style="color: #757575">{{fields.author.fields.name}}</span>
+              <v-icon small class="mb-1" color="primary">mdi-pencil</v-icon>
+              <span style="color: #5472cd">{{fields.author.fields.name}}</span>
             </v-flex>
           </v-layout>
           <nuxt-link :to="'/posts/'+fields.slug + '/'" style="text-decoration: none">
