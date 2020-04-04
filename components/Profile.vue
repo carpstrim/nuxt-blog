@@ -13,7 +13,7 @@
       <!--<p style="margin: 0 15px 0 15px">一見共通点のない2人が、一緒にブログを運営します。</p>-->
       <p style="margin: 0 15px 20px 15px">
         思ったことを、思ったままに表現できる場に。
-        <br />メンタルに自信がないけど、自信がないなりに工夫して合理的に生きていく。
+        <br />一見共通点のない2人が、それぞれの考え方や活動のことを投稿します。
       </p>
     </v-card-text>
     <v-divider />
@@ -22,7 +22,7 @@
         <v-img :src="node" aspect-ratio="1"></v-img>
       </v-col>
       <v-col cols="8" class="node-profile">
-        <div style="margin: 10px 10px 0 10px">
+        <div style="margin: 10px 10px 0 15px">
           <p>のーど</p>
           <span>フリーランス Webプログラマー</span>
           <br />
@@ -66,11 +66,11 @@
       </v-col>
     </v-row>
     <v-divider />
-    <!--<v-row no-gutters>
+    <v-row no-gutters>
       <v-col cols="8" class="node-profile">
-        <div style="margin: 10px 10px 0 10px">
+        <div style="margin: 10px 10px 0 15px">
           <p>焼きおにぎり</p>
-          <span>ひとことプロフィール</span>
+          <span>自分らしさを仕事に活かす挑戦中</span>
           <br />
           <v-btn
             color="#00acee"
@@ -87,7 +87,7 @@
         <v-img class="pa-2" :src="oni" aspect-ratio="1"></v-img>
       </v-col>
     </v-row>
-    <v-divider />-->
+    <v-divider />
     <v-layout row wrap>
       <v-spacer />
       <v-btn text large color="primary" to="/profile/" style="margin-right: 15px">プロフィール詳細 ></v-btn>
@@ -114,6 +114,17 @@ export default {
   color: #5472cd;
   position: relative;
   margin: 5px 0 0 0;
+  border-bottom: solid 1px #cce4ff;
+  position: relative;
+}
+
+.node-profile p:after {
+  position: absolute;
+  content: " ";
+  display: block;
+  border-bottom: solid 1px #5472cd;
+  bottom: -1px;
+  width: 20%;
 }
 
 .node-profile span {
