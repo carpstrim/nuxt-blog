@@ -1,5 +1,5 @@
 <template>
-  <v-container style="max-width: 1200px">
+  <v-container style="max-width: 1150px">
     <v-layout row wrap>
       <v-flex xs12 sm8 class="mb-1">
         <div v-for="(post, index) in posts" :key="index">

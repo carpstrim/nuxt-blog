@@ -12,16 +12,20 @@
           />
         </v-flex>
         <v-flex xs12 sm8>
-          <div class="mt-1 ml-2 mb-1">
-            <span>{{ formatDate(fields.createdAt) }}</span>
+          <v-layout row wrap class="ml-3 mr-6 mb-1">
+            <span class="mr-5">{{ formatDate(fields.createdAt) }}</span>
             <v-btn
               outlined
               color="orange darken-4"
               height="25px"
               :to="'/category/' + fields.category.fields.slug"
-              style="margin-left: 20px"
+              class="mb-1 mr-6"
             >{{fields.category.fields.title}}</v-btn>
-          </div>
+            <v-flex xs12 sm5>
+              <v-icon small class="mb-1" color="primary">mdi-pencil</v-icon>
+              <span style="color: #5472cd">{{fields.author.fields.name}}</span>
+            </v-flex>
+          </v-layout>
           <nuxt-link :to="'/posts/'+fields.slug + '/'" style="text-decoration: none">
             <h2 class="mr-2 ml-2 pb-1">{{ fields.title }}</h2>
           </nuxt-link>

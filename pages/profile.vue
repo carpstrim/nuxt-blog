@@ -1,5 +1,5 @@
 <template>
-  <v-container style="max-width: 1200px">
+  <v-container style="max-width: 1100px">
     <v-layout row wrap>
       <v-flex xs12 sm8>
         <v-card flat tile class="mb-2 mr-3 ml-3">
