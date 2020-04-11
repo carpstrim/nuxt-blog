@@ -119,7 +119,7 @@ export default {
 }
 
 .post .content p {
-  margin: 20px 4%;
+  margin: 20px 5%;
   font-size: 1em;
   line-height: 1.5em;
 }
