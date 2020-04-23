@@ -39,6 +39,7 @@ export default {
   plugins: [
     '~/plugins/contentful',
     '~/plugins/markdownit',
+    '~/plugins/firebase'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -99,10 +100,24 @@ export default {
   */
   build: {
     /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
-    }
+     ** You can extend webpack config here
+     */
+    // NOTE: これがないとnuxtとfirebaseが共存できない（core-js2とcore-js3の共存）
+    babel: {
+      presets({ isServer }) {
+        return [
+          [
+            require.resolve('@nuxt/babel-preset-app'),
+            // require.resolve('@nuxt/babel-preset-app-edge'), // For nuxt-edge users
+            {
+              buildTarget: isServer ? 'server' : 'client',
+              corejs: { version: 3 }
+            }
+          ]
+        ]
+      }
+    },
+
   },
   /*markdownit: {
     injected: true,
