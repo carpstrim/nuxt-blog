@@ -62,11 +62,11 @@ export default {
       {
         hid: "og:site_name",
         property: "og:site_name",
-        content: "TOP - のーど Inc"
+        content: "TOP - のーどインク"
       },
       { hid: "og:type", property: "og:type", content: "website" },
       { hid: "og:url", property: "og:url", content: "https://color-in-k.com/" },
-      { hid: "og:title", property: "og:title", content: "のーど Inc" },
+      { hid: "og:title", property: "og:title", content: "のーどインク" },
       {
         hid: "og:description",
         property: "og:description",
@@ -79,7 +79,11 @@ export default {
         content:
           "https://lh3.googleusercontent.com/u_t50jA6V7Rt0XVcVbbDvU5qSB2mrzOgpdjpBsOwAzBmSdaM4CBmAkKgu2C7Ffji-bYXyi_QEmm6Z4Sdv7jZPlHmVOCilLw_sNNT7wDdol6_pXXdWjWuvJMeUEgALG8F8haGln5ytg=w2400"
       },
-      { hid: "twitter:card", name: "twitter:card", content: "summary" },
+      {
+        hid: "twitter:card",
+        name: "twitter:card",
+        content: "summary_large_image"
+      },
       { hid: "twitter:site", name: "twitter:site", content: "@node_mental" }
     ]
   },
