@@ -99,9 +99,25 @@ export default {
   */
   build: {
     /*
-    ** You can extend webpack config here
-    */
+     ** You can extend webpack config here
+     */
+    // NOTE: これがないとnuxtとfirebaseが共存できない（core-js2とcore-js3の共存）
+    babel: {
+      presets({ isServer }) {
+        return [
+          [
+            require.resolve('@nuxt/babel-preset-app'),
+            // require.resolve('@nuxt/babel-preset-app-edge'), // For nuxt-edge users
+            {
+              buildTarget: isServer ? 'server' : 'client',
+              corejs: { version: 3 }
+            }
+          ]
+        ]
+      }
+    },
     extend(config, ctx) {
+
     }
   },
   /*markdownit: {
