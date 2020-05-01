@@ -66,8 +66,13 @@ export default {
         //analyticsUacct: "UA-157474508-1",  // analyticsアカウントID（オプション）
         //analyticsDomainName: "knote.life"  // analyticsアカウントドメイン（オプション）
       }
-    ]
+    ],
+    '@nuxtjs/pwa'
   ],
+  manifest: {
+    name: 'contentful-blog',
+    lang: 'ja'
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
