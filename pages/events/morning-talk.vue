@@ -4,34 +4,17 @@
       <v-layout row wrap>
         <v-flex xs12 sm8>
           <v-card flat tile class="mb-7 mr-3 ml-3">
-            <article class="post">
-              <v-container style="white-space: pre-line; word-break: break-all;">
-                <h1 class="mt-10">{{ post.title }}</h1>
-                <p class="author">Writer： {{post.author.fields.name}}</p>
-                <v-img　 class="ma-3" :src="post.image.fields.file.url" aspect-ratio="1.77" />
-                <p v-html="$md.render(post.outline)"></p>
-                <v-layout class="mt-5 mb-5" column wrap justify-center align-center>
-                  <v-btn
-                    color="success"
-                    large
-                    :disabled="disabled"
-                    @click="attend()"
-                  >{{post.buttonText}}</v-btn>
-                  <span class="mt-2 below">{{belowText}}</span>
-                </v-layout>
-                <div class="content" v-html="$md.render(post.content)"></div>
-              </v-container>
-            </article>
-            <v-layout class="mb-10" column wrap justify-center align-center>
-              <p>↓イベント参加はこちらから↓</p>
-              <v-btn
-                color="success"
-                large
-                :disabled="disabled"
-                @click="attend()"
-              >{{post.buttonText}}</v-btn>
-              <span class="mt-2 below">{{belowText}}</span>
-            </v-layout>
+            <no-ssr>
+              <article class="post">
+                <v-container style="white-space: pre-line; word-break: break-all;">
+                  <h1 class="mt-10">{{ post.title }}</h1>
+                  <p class="author">Writer： {{post.author.fields.name}}</p>
+                  <v-img　 class="ma-3" :src="post.image.fields.file.url" aspect-ratio="1.77" />
+                  <p v-html="$md.render(post.outline)"></p>
+                  <div class="content" v-html="$md.render(post.content)"></div>
+                </v-container>
+              </article>
+            </no-ssr>
             <v-container>
               <v-flex xs12 class="mb-5">
                 <v-btn
@@ -72,27 +55,6 @@
         </v-flex>
       </v-layout>
     </v-container>
-    <v-dialog persistent v-model="dialog" max-width="600">
-      <v-card class="pt-5" style="white-space: pre-line; word-break: break-all;">
-        <v-card-title style="text-decoration: underline">確認事項・注意事項</v-card-title>
-        <v-card-subtitle class="mt-1">参加の前にご確認いただき、末尾の「同意する」にチェックをお願いします。</v-card-subtitle>
-        <v-card-text style="color:black" class="mt-1">
-          <div class="post content" v-html="$md.render(post.notes)"></div>
-          <v-checkbox class="ml-3 mt-10" color="info" v-model="agree" label="同意する"></v-checkbox>
-          <v-text-field v-model="twitterId" class="ml-3 mr-3" label="Twitter ID（例：@node_mental）"></v-text-field>
-        </v-card-text>
-
-        <v-layout row wrap justify-center>
-          <v-btn
-            :disabled="!agree || !twitterId"
-            class="mb-10 mr-10"
-            color="info"
-            :href="post.link"
-          >参加する</v-btn>
-          <v-btn class="mb-10" color="grey" @click="dialog=false">戻る</v-btn>
-        </v-layout>
-      </v-card>
-    </v-dialog>
   </div>
 </template>
 
@@ -106,12 +68,12 @@ export default {
     CategoryList,
     Profile
   },
-  async asyncData({ params, error, payload }) {
+  async asyncData(/*{ params, error, payload }*/) {
     //    if (payload) return { post: payload }
     const post = await client
       .getEntries({
         content_type: "event",
-        "fields.slug": params.slug
+        "fields.slug": "morning-talk" //params.slug
       })
       .then(entries => {
         return entries.items[0].fields;

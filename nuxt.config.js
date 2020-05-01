@@ -128,7 +128,7 @@ export default {
   },*/
   generate: {
     routes() {
-      return client
+      const post = client
         .getEntries({ content_type: 'post' })
         .then(entries => {
           return entries.items.map(entry => {
@@ -138,7 +138,21 @@ export default {
             }
           })
         })
-    }
+      return post
+    }/*,
+    routes() {
+      const event = client
+        .getEntries({ content_type: 'event' })
+        .then(entries => {
+          return entries.items.map(entry => {
+            return {
+              route: "/events/" + entry.fields.slug + "/",
+              payload: entry
+            }
+          })
+        })
+      return event
+    }*/
   },
   sitemap: {
     hostname: 'https://color-in-k.com',
