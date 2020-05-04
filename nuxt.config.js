@@ -160,7 +160,7 @@ export default {
     }*/
   },
   sitemap: {
-    hostname: 'https://color-in-k.com',
+    hostname: 'https://node-color-ink.studio',
     routes() {
       return client
         .getEntries({ content_type: 'post' })
