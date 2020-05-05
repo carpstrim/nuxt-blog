@@ -30,9 +30,9 @@
                 style="font-size: 20pt; cursor: pointer"
                 class="mb-2 ml-2"
                 @click="$router.push('/')"
-              >のーど Inc.</v-card-title>
+              >のーどインク</v-card-title>
               <v-card-subtitle style="color: white; font-size: 11pt; margin-left: 10px">
-                ー 自分の色を作るブログ ー
+                ー 自分の"色"を作るブログ ー
                 <!--ー 私の色づくり ー-->
               </v-card-subtitle>
             </v-img>

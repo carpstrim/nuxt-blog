@@ -15,14 +15,6 @@
         <article>
           <profile class="mb-10" style="margin: 0 25px" />
         </article>
-        <!--<article>
-              <category-list
-              :categories="categories"
-              class="mt-10 mb-10"
-              style="margin: 0 25px"
-              />
-        </article>-->
-        <adsbygoogle ad-slot="7918916412" style="width: 300px; margin: 25px auto" />
       </v-flex>
     </v-layout>
   </v-container>

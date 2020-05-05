@@ -23,7 +23,6 @@
         <article>
           <category-list class="mt-5 mb-5" style="margin: 0 25px" />
         </article>
-        <!--<adsbygoogle ad-slot="7918916412" style="margin: 0 25px" />-->
       </v-flex>
     </v-layout>
   </v-container>

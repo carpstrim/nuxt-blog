@@ -1,9 +1,11 @@
 <template>
   <v-container style="max-width: 1150px">
+    イベント一覧
     <v-layout row wrap>
       <v-flex xs12 sm8 class="mb-1">
         <div v-for="(post, index) in posts" :key="index">
-          <post-outline-card :post="post" />
+          <!--<post-outline-card :post="post" />イベント掲載用のカードを作る-->
+          <v-card :to="'/events/' + post.fields.slug">{{post.fields.title}}</v-card>
         </div>
         <v-layout v-if="length === 11" row wrap justify-end class="ma-7">
           <v-btn to="/page/2" color="secondary" large outlined>次ページ ＞</v-btn>
@@ -25,13 +27,13 @@
 import client from "~/plugins/contentful";
 import CategoryList from "@/components/CategoryList";
 import Profile from "@/components/Profile";
-import PostOutlineCard from "@/components/PostOutlineCard";
+//import PostOutlineCard from "@/components/PostOutlineCard";
 
 export default {
   async asyncData({ params }) {
     const posts = await client
       .getEntries({
-        content_type: "post",
+        content_type: "event",
         order: "-fields.createdAt",
         limit: 10 + 1
         //skip: maxEntry * (page - 1)
@@ -88,8 +90,7 @@ export default {
   },
   components: {
     CategoryList,
-    Profile,
-    PostOutlineCard
+    Profile
   },
   data() {
     return {};

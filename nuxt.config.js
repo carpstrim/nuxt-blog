@@ -10,8 +10,8 @@ export default {
   ** Headers of the page
   */
   head: {
-    titleTemplate: '%s - ' + 'のーど Inc',
-    title: 'のーど Inc',
+    titleTemplate: '%s - ' + 'のーどインク',
+    title: 'のーどインク',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -39,6 +39,7 @@ export default {
   plugins: [
     '~/plugins/contentful',
     '~/plugins/markdownit',
+    '~/plugins/firebase'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -65,8 +66,13 @@ export default {
         //analyticsUacct: "UA-157474508-1",  // analyticsアカウントID（オプション）
         //analyticsDomainName: "knote.life"  // analyticsアカウントドメイン（オプション）
       }
-    ]
+    ],
+    '@nuxtjs/pwa'
   ],
+  manifest: {
+    name: 'contentful-blog',
+    lang: 'ja'
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
@@ -116,9 +122,7 @@ export default {
         ]
       }
     },
-    extend(config, ctx) {
 
-    }
   },
   /*markdownit: {
     injected: true,
@@ -129,7 +133,7 @@ export default {
   },*/
   generate: {
     routes() {
-      return client
+      const post = client
         .getEntries({ content_type: 'post' })
         .then(entries => {
           return entries.items.map(entry => {
@@ -139,10 +143,24 @@ export default {
             }
           })
         })
-    }
+      return post
+    }/*,
+    routes() {
+      const event = client
+        .getEntries({ content_type: 'event' })
+        .then(entries => {
+          return entries.items.map(entry => {
+            return {
+              route: "/events/" + entry.fields.slug + "/",
+              payload: entry
+            }
+          })
+        })
+      return event
+    }*/
   },
   sitemap: {
-    hostname: 'https://color-in-k.com',
+    hostname: 'https://node-color-ink.studio',
     routes() {
       return client
         .getEntries({ content_type: 'post' })

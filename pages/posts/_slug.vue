@@ -20,11 +20,11 @@
               <v-img　 class="ma-3" :src="post.image.fields.file.url" aspect-ratio="1.77" />
               <div class="content" v-html="$md.render(post.content)"></div>
               <div style="text-align:center; margin: 0 0 15px 0">
-                <adsbygoogle
+                <!--<adsbygoogle
                   ad-slot="7918916412"
                   ad-format
                   style="width: 300px; height: 120px; margin: 0 auto"
-                />
+                />-->
               </div>
             </v-container>
           </article>
@@ -136,7 +136,7 @@ export default {
         {
           hid: "og:site_name",
           property: "og:site_name",
-          content: this.post.title + " - のーど Inc"
+          content: this.post.title + " - のーどインク"
         },
         { hid: "og:type", property: "og:type", content: "article" },
         {
@@ -155,7 +155,11 @@ export default {
           content: this.post.outline
         },
         //{ hid: 'og:image', property: 'og:image', content: this.post.image.fields.file.url },
-        { hid: "twitter:card", name: "twitter:card", content: "summary" },
+        {
+          hid: "twitter:card",
+          name: "twitter:card",
+          content: "summary_large_image"
+        },
         { hid: "twitter:site", name: "twitter:site", content: "@node_mental" }
       ]
     };

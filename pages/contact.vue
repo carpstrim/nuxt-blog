@@ -26,34 +26,17 @@
                   >LINE公式アカウント</a>でもメッセージを受け付けています。)
                 </p>
               </div>
-
-              <form name="contact" method="POST" data-netlify="true" action="/thank-you">
-                <div class="cp_iptxt">
-                  <input type="hidden" name="form-name" value="contact" />
-                  <p class="mb-10">
-                    <label class="ef">
-                      <input type="text" placeholder="お名前" name="name" />
-                    </label>
-                  </p>
-
-                  <p class="mb-10">
-                    <label class="ef">
-                      <input type="email" placeholder="e-mail" name="email" />
-                    </label>
-                  </p>
-                </div>
-                <div class="cp_textarea">
-                  <p>
-                    <label class="ef">
-                      Message：
-                      <textarea name="message"></textarea>
-                    </label>
-                  </p>
-                </div>
-                <p>
-                  <v-btn color="primary" style="margin-left: 40px" type="submit">送信</v-btn>
-                </p>
-              </form>
+              <v-flex xs8 class="mt-10 mr-7 ml-7">
+                <v-text-field v-model="name" label="お名前"></v-text-field>
+                <v-text-field v-model="mail" label="メールアドレス"></v-text-field>
+              </v-flex>
+              <v-flex x12 class="mt-3 mr-7 ml-7">
+                <v-textarea v-model="message" outlined label="メッセージ"></v-textarea>
+              </v-flex>
+              <v-flex x12 class="mb-3 mr-7 ml-7">
+                <v-btn :loading="loading" color="primary" @click="send()">送信</v-btn>
+                <span class="ml-3" style="color:red">{{warnText}}</span>
+              </v-flex>
             </v-container>
           </v-card>
         </v-container>
@@ -87,9 +70,32 @@ export default {
     CategoryCard
   },
   data() {
-    return {};
+    return {
+      loading: false,
+      name: "",
+      mail: "",
+      message: "",
+      warnText: ""
+    };
   },
-  methods: {}
+  methods: {
+    async send() {
+      if (this.name && this.mail && this.message) {
+        this.loading = true;
+        const call = this.$functions.httpsCallable("form");
+        await call({
+          name: this.name,
+          mail: this.mail,
+          message: this.message
+        }).then(res => {
+          console.log({ res });
+          this.$router.push("/thank-you");
+        });
+      } else {
+        this.warnText = "上記全ての項目を入力してください";
+      }
+    }
+  }
 };
 </script>
 
@@ -108,66 +114,5 @@ export default {
   border-bottom: solid 3px #5472cd;
   bottom: -3px;
   width: 30%;
-}
-
-.cp_iptxt {
-  position: relative;
-  width: 60%;
-  margin: 50px 3%;
-}
-.cp_iptxt input[type="text"] {
-  font: 15px/24px;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 0.3em;
-  transition: 0.3s;
-  letter-spacing: 1px;
-  color: #424242;
-  border: none;
-  border-bottom: 2px solid #1b2538;
-  background: transparent;
-}
-
-.ef input[type="text"]:focus {
-  border-bottom: 2px solid #cce4ff;
-  outline: none;
-}
-
-.ef input[type="email"]:focus {
-  border-bottom: 2px solid #cce4ff;
-  outline: none;
-}
-
-.cp_iptxt input[type="email"] {
-  font: 15px/24px;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 0.3em;
-  transition: 0.3s;
-  letter-spacing: 1px;
-  color: #424242;
-  border: none;
-  border-bottom: 2px solid #1b2538;
-  background: transparent;
-}
-
-.cp_textarea {
-  position: relative;
-  width: 80%;
-  margin: 50px 3%;
-  color: #424242;
-}
-
-.cp_textarea textarea {
-  font: 15px/24px;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 0.3em;
-  transition: 0.3s;
-  letter-spacing: 1px;
-  color: #424242;
-  border: none;
-  border-bottom: 2px solid #1b2538;
-  background: transparent;
 }
 </style>
