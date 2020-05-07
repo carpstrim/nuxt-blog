@@ -82,11 +82,15 @@ export default {
       {
         hid: "og:site_name",
         property: "og:site_name",
-        content: "記事一覧 - のーど Inc"
+        content: "記事一覧 - のーどインク"
       },
       { hid: "og:type", property: "og:type", content: "website" },
-      { hid: "og:url", property: "og:url", content: "https://color-in-k.com/" },
-      { hid: "og:title", property: "og:title", content: "のーど Inc" },
+      {
+        hid: "og:url",
+        property: "og:url",
+        content: "https://node-color-ink.studio/"
+      },
+      { hid: "og:title", property: "og:title", content: "のーどインク" },
       {
         hid: "og:description",
         property: "og:description",

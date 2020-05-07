@@ -66,7 +66,11 @@ export default {
         content: "TOP - のーどインク"
       },
       { hid: "og:type", property: "og:type", content: "website" },
-      { hid: "og:url", property: "og:url", content: "https://color-in-k.com/" },
+      {
+        hid: "og:url",
+        property: "og:url",
+        content: "https://node-color-ink.studio/"
+      },
       { hid: "og:title", property: "og:title", content: "のーどインク" },
       {
         hid: "og:description",

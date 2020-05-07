@@ -68,7 +68,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 color="#00acee"
-                :href="'http://twiter.com/share?url=https://color-in-k.com/posts/' + post.slug + '&via=node_mental&text=' + post.title"
+                :href="'http://twiter.com/share?url=https://node-color-ink.studio/posts/' + post.slug + '&via=node_mental&text=' + post.title"
               >
                 <v-icon>mdi-twitter</v-icon>ツイート
               </v-btn>
@@ -79,7 +79,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 color="#4267B2"
-                :href="'https://www.facebook.com/share.php?u=https://color-in-k.com/posts/' + post.slug"
+                :href="'https://www.facebook.com/share.php?u=https://node-color-ink.studio/posts/' + post.slug"
               >
                 <v-icon>mdi-facebook</v-icon>シェア
               </v-btn>
@@ -142,7 +142,7 @@ export default {
         {
           hid: "og:url",
           property: "og:url",
-          content: "https://color-in-k.com/posts/" + this.post.slug
+          content: "https://node-color-ink.studio/posts/" + this.post.slug
         },
         {
           hid: "og:title",
@@ -161,6 +161,12 @@ export default {
           content: "summary_large_image"
         },
         { hid: "twitter:site", name: "twitter:site", content: "@node_mental" }
+      ],
+      link: [
+        {
+          rel: "canonical",
+          href: "https://node-color-ink.studio/posts/" + this.post.slug
+        }
       ]
     };
   },

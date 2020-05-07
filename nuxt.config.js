@@ -18,7 +18,7 @@ export default {
       { hid: 'og:image', property: 'og:image', content: 'https://lh3.googleusercontent.com/u_t50jA6V7Rt0XVcVbbDvU5qSB2mrzOgpdjpBsOwAzBmSdaM4CBmAkKgu2C7Ffji-bYXyi_QEmm6Z4Sdv7jZPlHmVOCilLw_sNNT7wDdol6_pXXdWjWuvJMeUEgALG8F8haGln5ytg=w2400' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
     ],
     script: [
       { src: "https://platform.twitter.com/widgets.js", type: 'text/javascript' }
@@ -59,14 +59,14 @@ export default {
     ['@nuxtjs/google-analytics', {
       id: 'UA-157474508-1'
     }],
-    /*[
+    [
       "@nuxtjs/google-adsense",
       {
         id: "ca-pub-6334332538554348",  // Google AdSense クライアントID（必須）
         //analyticsUacct: "UA-157474508-1",  // analyticsアカウントID（オプション）
         //analyticsDomainName: "knote.life"  // analyticsアカウントドメイン（オプション）
       }
-    ],*/
+    ],
     '@nuxtjs/pwa'
   ],
   manifest: {
