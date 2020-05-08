@@ -1,6 +1,6 @@
 import * as firebase from 'firebase/app'
-import 'firebase/auth'
-import 'firebase/firestore'
+//import 'firebase/auth'
+//import 'firebase/firestore'
 import 'firebase/functions'
 
 const config = {
@@ -16,12 +16,12 @@ const config = {
 
 firebase.initializeApp(config)
 
-const firestore = firebase.firestore()
-const auth = firebase.auth()
+//const firestore = firebase.firestore()
+//const auth = firebase.auth()
 const functions = firebase.functions()
 
 export default function (app, inject) {
-    inject('firestore', firestore) // this.$firestore
-    inject('auth', auth) // this.$auth
+    //inject('firestore', firestore) // this.$firestore
+    //inject('auth', auth) // this.$auth
     inject('functions', functions)
 }
