@@ -120,16 +120,6 @@ export default {
       ]
     };
   },
-  created() {
-    const now = new Date().getTime();
-    console.log({ now });
-    console.log(this.post.holdAt);
-    const holdDateTime = new Date(this.post.holdAt).getTime();
-    if (holdDateTime < now) {
-      this.disabled = false;
-      this.belowText = "";
-    }
-  },
   mounted() {
     console.log({ post: this.post });
   },

@@ -2,7 +2,7 @@
   <v-container style="max-width: 1150px">
     <v-layout row wrap>
       <v-flex xs12 sm8 class="mb-5">
-        <div v-for="(post, index) in posts" :key="index">
+        <div v-for="(post, index) in postsOnThisPage" :key="index">
           <post-outline-card :post="post" />
         </div>
         <v-layout row wrap justify-space-between class="ma-7">
@@ -14,7 +14,7 @@
             outlined
           >＜ 前ページ</v-btn>
           <v-btn
-            v-if="length === 11"
+            v-if="length > 11"
             :to="'/page/' + (page*1 + 1)"
             color="secondary"
             large
@@ -38,15 +38,15 @@
 </template>
 
 <script>
-import client from "~/plugins/contentful";
+//import client from "~/plugins/contentful";
 import CategoryList from "@/components/CategoryList";
 import Profile from "@/components/Profile";
 import PostOutlineCard from "@/components/PostOutlineCard";
 
 export default {
-  async asyncData({ params, error, payload }) {
+  async asyncData({ params, app }) {
     const page = params.page;
-    const posts = await client
+    /*const posts = await client
       .getEntries({
         content_type: "post",
         order: "-fields.createdAt",
@@ -55,21 +55,23 @@ export default {
       })
       .then(entries => {
         return entries.items;
-      });
+      });*/
+    const { data } = await app.$axios.get(`/_nuxt/api/datas.json`);
+    const posts = data.apiDatas;
 
     return { posts, page };
   },
   mounted() {
-    console.log({ post: this.posts });
     console.log({ pageNum: this.page * 1 });
     if (this.page * 1 === 1) {
       this.$router.push("/");
     }
   },
   created() {
-    this.length = this.posts.length;
-    console.log(this.length);
-    this.posts = this.posts.slice(0, 10);
+    this.postsOnThisPage = this.posts.splice(10 * (this.page * 1 - 1), 10);
+    //.log(this.posts.length);
+    this.length = this.posts.length - 10 * (this.page * 1 - 2);
+    //console.log(this.length);
   },
   head: {
     title: "page",

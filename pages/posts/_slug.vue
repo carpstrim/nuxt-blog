@@ -60,7 +60,7 @@
               </v-btn>
             </v-flex>
 
-            <v-flex xs12 class="mb-5">
+            <!--<v-flex xs12 class="mb-5">
               <v-btn
                 class="ml-5"
                 large
@@ -83,7 +83,7 @@
               >
                 <v-icon>mdi-facebook</v-icon>シェア
               </v-btn>
-            </v-flex>
+            </v-flex>-->
           </v-container>
         </v-card>
       </v-flex>
@@ -102,7 +102,7 @@
 </template>
 
 <script>
-import client from "~/plugins/contentful";
+//import client from "~/plugins/contentful";
 import CategoryList from "@/components/CategoryList";
 import Profile from "@/components/Profile";
 
@@ -111,16 +111,20 @@ export default {
     CategoryList,
     Profile
   },
-  async asyncData({ params, error, payload }) {
+  async asyncData({ params, app }) {
     //    if (payload) return { post: payload }
-    const post = await client
+    /*const post = await client
       .getEntries({
         content_type: "post",
         "fields.slug": params.slug
       })
       .then(entries => {
         return entries.items[0].fields;
-      });
+      });*/
+
+    const { data } = await app.$axios.get(`/_nuxt/api/datas.json`);
+    const posts = data.apiDatas;
+    const post = posts.filter(e => e.slug === params.slug).shift();
 
     return { post };
   },

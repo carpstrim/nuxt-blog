@@ -5,7 +5,7 @@
         <div class="page-title">
           <h1>カテゴリー：{{selectedCategoryName}} の記事一覧 （{{params.page}}ページ目）</h1>
         </div>
-        <div v-for="(post, index) in posts" :key="index">
+        <div v-for="(post, index) in postsOnThisPage" :key="index">
           <post-outline-card :post="post" />
         </div>
         <v-layout row wrap justify-space-between class="ma-7">
@@ -45,9 +45,9 @@ import Profile from "@/components/Profile";
 import PostOutlineCard from "@/components/PostOutlineCard";
 
 export default {
-  async asyncData({ params, error, payload }) {
+  async asyncData({ params, app }) {
     const page = params.page;
-    const posts = await client
+    /*const posts = await client
       .getEntries({
         content_type: "post",
         "fields.category.sys.contentType.sys.id": "category",
@@ -58,7 +58,11 @@ export default {
       })
       .then(entries => {
         return entries.items;
-      });
+      });*/
+    const { data } = await app.$axios.get(`/_nuxt/api/datas.json`);
+    const posts = data.apiDatas.filter(
+      e => e.category.fields.slug === params.category
+    );
 
     const categories = await client
       .getEntries({
@@ -86,9 +90,10 @@ export default {
     }
   },
   created() {
-    this.length = this.posts.length;
+    this.postsOnThisPage = this.posts.splice(10 * (this.page * 1 - 1), 10);
+    console.log(this.posts.length);
+    this.length = this.posts.length - 10 * (this.page * 1 - 2);
     console.log(this.length);
-    this.posts = this.posts.slice(0, 10);
   },
   head: {
     title: "カテゴリー毎の記事一覧"

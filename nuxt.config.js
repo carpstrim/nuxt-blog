@@ -21,7 +21,6 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
     ],
     script: [
-      { src: "https://platform.twitter.com/widgets.js", type: 'text/javascript' }
     ]
   },
   /*
@@ -39,7 +38,8 @@ export default {
   plugins: [
     '~/plugins/contentful',
     '~/plugins/markdownit',
-    '~/plugins/firebase'
+    '~/plugins/firebase',
+    '~/plugins/axios.js',
   ],
   /*
   ** Nuxt.js dev-modules
@@ -59,15 +59,16 @@ export default {
     ['@nuxtjs/google-analytics', {
       id: 'UA-157474508-1'
     }],
-    [
+    /*[
       "@nuxtjs/google-adsense",
       {
         id: "ca-pub-6334332538554348",  // Google AdSense クライアントID（必須）
         //analyticsUacct: "UA-157474508-1",  // analyticsアカウントID（オプション）
         //analyticsDomainName: "knote.life"  // analyticsアカウントドメイン（オプション）
       }
-    ],
-    '@nuxtjs/pwa'
+    ],*/
+    '@nuxtjs/pwa',
+    '~/modules/api'
   ],
   manifest: {
     name: 'contentful-blog',

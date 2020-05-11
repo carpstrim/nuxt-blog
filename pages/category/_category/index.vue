@@ -8,7 +8,7 @@
         <div v-for="(post, index) in posts" :key="index">
           <post-outline-card :post="post" />
         </div>
-        <v-layout v-if="length === 11" row wrap justify-end class="ma-7">
+        <v-layout v-if="length > 11" row wrap justify-end class="ma-7">
           <v-btn
             :to="'/category/' + params.category + '/page/2'"
             color="secondary"
@@ -37,8 +37,8 @@ import Profile from "@/components/Profile";
 import PostOutlineCard from "@/components/PostOutlineCard";
 
 export default {
-  async asyncData({ params }) {
-    const posts = await client
+  async asyncData({ params, app }) {
+    /*const posts = await client
       .getEntries({
         content_type: "post",
         "fields.category.sys.contentType.sys.id": "category",
@@ -48,7 +48,11 @@ export default {
       })
       .then(entries => {
         return entries.items;
-      });
+      });*/
+    const { data } = await app.$axios.get(`/_nuxt/api/datas.json`);
+    const posts = data.apiDatas.filter(
+      e => e.category.fields.slug === params.category
+    );
 
     const categories = await client
       .getEntries({

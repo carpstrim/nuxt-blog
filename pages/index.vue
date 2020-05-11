@@ -5,7 +5,7 @@
         <div v-for="(post, index) in posts" :key="index">
           <post-outline-card :post="post" />
         </div>
-        <v-layout v-if="length === 11" row wrap justify-end class="ma-7">
+        <v-layout v-if="length > 11" row wrap justify-end class="ma-7">
           <v-btn to="/page/2" color="secondary" large outlined>次ページ ＞</v-btn>
         </v-layout>
       </v-flex>
@@ -22,14 +22,14 @@
 </template>
 
 <script>
-import client from "~/plugins/contentful";
+//import client from "~/plugins/contentful";
 import CategoryList from "@/components/CategoryList";
 import Profile from "@/components/Profile";
 import PostOutlineCard from "@/components/PostOutlineCard";
 
 export default {
-  async asyncData({ params }) {
-    const posts = await client
+  async asyncData({ params, app }) {
+    /*const posts = await client
       .getEntries({
         content_type: "post",
         order: "-fields.createdAt",
@@ -38,16 +38,19 @@ export default {
       })
       .then(entries => {
         return entries.items;
-      });
+      });*/
+
+    const { data } = await app.$axios.get(`/_nuxt/api/datas.json`);
+    const posts = data.apiDatas;
 
     return { posts };
   },
   mounted() {
-    console.log({ post: this.posts });
+    //console.log({ post: this.posts });
   },
   created() {
     this.length = this.posts.length;
-    console.log(this.length);
+    //console.log(this.length);
     this.posts = this.posts.slice(0, 10);
   },
   head: {

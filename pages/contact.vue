@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import client from "~/plugins/contentful";
+//import client from "~/plugins/contentful";
 import CategoryList from "@/components/CategoryList";
 import Profile from "@/components/Profile";
 import CategoryCard from "@/components/CategoryCard";
